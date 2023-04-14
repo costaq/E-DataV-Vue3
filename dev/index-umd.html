@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+</head>
+
+<body>
+    <div id="app">
+        <e-full-screen-container>
+            <e-digital-flop :value="9999" separator="," color="#c75151"></e-digital-flop>
+        </e-full-screen-container>
+    </div>
+</body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+<script src="../umd/e-datav-vue3.umd.js"></script>
+<!-- <script src="https://unpkg.com/e-datav/dist/e-datav.min.vue.js"></script> -->
+<script>
+    const { createApp } = Vue;
+    const { EDigitalFlop } = EDataV;
+
+    const App = createApp();
+    App.component('EDigitalFlop', EDigitalFlop);
+    App.component('EFullScreenContainer', EFullScreenContainer);
+    App.mount('#app');
+</script>
+
+</html>

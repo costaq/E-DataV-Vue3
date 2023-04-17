@@ -2,17 +2,19 @@
  * @Autor: costa
  * @Date: 2023-04-04 14:59:47
  * @LastEditors: costa
- * @LastEditTime: 2023-04-14 13:04:42
+ * @LastEditTime: 2023-04-17 11:11:25
  * @Description: 数字翻牌器
  * @Copyright: © 2023 by costa. All rights reserved.
  */
-import { defineComponent, onMounted, reactive, ref, watch } from 'vue';
-import { withInstall } from '../../../utils/common';
-import { animation } from '../../../utils/animation';
-import '../style/index.scss';
+import { ExtractPropTypes, defineComponent, onMounted, reactive, ref, watch } from 'vue';
+import { withInstall } from '../../utils/common';
+import { animation } from '../../utils/animation';
+import './index.scss';
 import { digitalFlopProps } from './digitalFlop';
 
-const EDigitalFlop = defineComponent({
+export type DigitalFlopProps = ExtractPropTypes<typeof digitalFlopProps>;
+
+export const EDigitalFlop = withInstall(defineComponent({
     name: 'EDigitalFlop',
     props: digitalFlopProps,
     setup(props) {
@@ -68,7 +70,5 @@ const EDigitalFlop = defineComponent({
             <span style={styles}>{displayVal.value}</span>
         );
     },
-});
-
-export default EDigitalFlop;
+}));
 

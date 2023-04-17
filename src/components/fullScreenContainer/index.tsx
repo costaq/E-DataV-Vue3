@@ -2,14 +2,17 @@
  * @Autor: costa
  * @Date: 2023-04-07 10:46:04
  * @LastEditors: costa
- * @LastEditTime: 2023-04-07 16:57:43
- * @Description: 
+ * @LastEditTime: 2023-04-17 11:01:09
+ * @Description: 全屏组件
  * @Copyright: © 2023 by costa. All rights reserved.
  */
-import { defineComponent, onBeforeMount, onMounted } from "vue";
+import { ExtractPropTypes, defineComponent, onBeforeMount, onMounted } from "vue";
 import { fullScreenContainerProps } from './fullScreenContainer';
+import { withInstall } from '../../utils/common';
 
-const FullScreenContainer = defineComponent({
+export type FullScreenContainerProps = ExtractPropTypes<typeof fullScreenContainerProps>;
+
+export const EFullScreenContainer = withInstall(defineComponent({
     name: 'EFullScreenContainer',
     props: fullScreenContainerProps,
     setup(props, { slots }) {
@@ -73,6 +76,4 @@ const FullScreenContainer = defineComponent({
             <>{slots['default'] && slots['default']()}</>
         );
     },
-});
-
-export default FullScreenContainer;
+}));

@@ -3,10 +3,8 @@
  * @Date: 2023-04-07 16:40:10
  * @LastEditors: costa
  * @LastEditTime: 2023-04-07 17:46:48
- * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
-import type { ExtractPropTypes } from "vue"
 
 export const fullScreenContainerProps = {
     /**
@@ -34,5 +32,3 @@ export const fullScreenContainerProps = {
         default: 1080
     }
 }
-
-export type FullScreenContainerProps = ExtractPropTypes<typeof fullScreenContainerProps>;

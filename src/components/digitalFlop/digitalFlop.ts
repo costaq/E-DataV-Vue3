@@ -61,5 +61,3 @@ export const digitalFlopProps = {
         default: ''
     }
 }
-
-export type DigitalFlopProps = ExtractPropTypes<typeof digitalFlopProps>;

@@ -12,11 +12,13 @@
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "noEmit": true,
-    "allowImportingTsExtensions": true,
+    // "allowImportingTsExtensions": true,
+    "allowJs": true,
     "types": [
       "node"
     ]
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "dev/**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "dev/**/*.tsx", "dev/**/*.vue"],
+  "exclude": ["es"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

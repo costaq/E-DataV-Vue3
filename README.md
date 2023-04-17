@@ -8,7 +8,7 @@
 ### npm安装
 
 ```shell
-$ npm install e-datav
+$ npm install e-datav-vue3
 ```
 
 ### 使用

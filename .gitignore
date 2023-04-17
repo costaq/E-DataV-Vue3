@@ -7,13 +7,11 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-cjs
+node_modules
+
 es
 lib
 umd
-node_modules
-dist
-dist-ssr
 yarn.lock
 *.local
 

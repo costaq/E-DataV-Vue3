@@ -1,3 +1,11 @@
+<!--
+ * @Autor: costa
+ * @Date: 2023-04-14 13:59:05
+ * @LastEditors: costa
+ * @LastEditTime: 2023-06-09 16:45:21
+ * @Description: 
+ * @Copyright: © 2023 by costa. All rights reserved.
+-->
 <!doctype html>
 <html lang="en">
 
@@ -10,19 +18,25 @@
 <body>
     <div id="app">
         <e-full-screen-container>
-            <e-digital-flop :value="9999" separator="," color="#c75151"></e-digital-flop>
+            <div style="width:200px;height:200px;margin-left:200px;">
+                <e-border-box-1>
+                    <e-digital-flop :value="9999" separator="," color="#c75151"></e-digital-flop>
+                </e-border-box-1>
+            </div>
+            
         </e-full-screen-container>
     </div>
 </body>
 <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
 <script src="../umd/e-datav-vue3.umd.js"></script>
-<!-- <script src="https://unpkg.com/e-datav-vue3/dist/e-datav-vue3.umd.js"></script> -->
+<!-- <script src="https://unpkg.com/e-datav-vue3/umd/e-datav-vue3.umd.js"></script> -->
 <script>
     const { createApp } = Vue;
-    const { EDigitalFlop, EFullScreenContainer } = EDataV;
+    const { EDigitalFlop, EFullScreenContainer, EBorderBox1 } = EDataV;
 
     const App = createApp();
     App.component('EDigitalFlop', EDigitalFlop);
+    App.component('EBorderBox1', EBorderBox1);
     App.component('EFullScreenContainer', EFullScreenContainer);
     App.mount('#app');
 </script>

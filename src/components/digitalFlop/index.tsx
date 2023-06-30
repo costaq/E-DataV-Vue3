@@ -2,15 +2,77 @@
  * @Autor: costa
  * @Date: 2023-04-04 14:59:47
  * @LastEditors: costa
- * @LastEditTime: 2023-04-17 11:11:25
+ * @LastEditTime: 2023-06-21 14:49:54
  * @Description: 数字翻牌器
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import { ExtractPropTypes, defineComponent, onMounted, reactive, ref, watch } from 'vue';
 import { withInstall } from '../../utils/common';
 import { animation } from '../../utils/animation';
-import './index.scss';
-import { digitalFlopProps } from './digitalFlop';
+import { GlobalFontStyle } from '../styled/GlobalStyle';
+// import './index.scss';
+
+const digitalFlopProps = {
+    /**
+    * @description 终止值
+    */
+    value: {
+        type: Number,
+        required: false,
+        default: 1000
+    },
+    /**
+     * @description 小数点保留几位
+     */
+    decimals: {
+        type: Number,
+        required: false,
+        default: 0,
+        validator(value: number) {
+            return value >= 0
+        }
+    },
+    /**
+     * @description 持续时间
+     */
+    duration: {
+        type: Number,
+        required: false,
+        default: 3000
+    },
+    /**
+     * @description 字体大小
+     */
+    fontSize: {
+        type: Number,
+        required: false,
+        default: 50
+    },
+    /**
+     * @description 字体库 内置 electronic
+     */
+    fontFamily: {
+        type: String,
+        required: false,
+        default: 'electronic'//'electronic'
+    },
+    /**
+     * @description 字体颜色
+     */
+    color: {
+        type: String,
+        required: false,
+        default: '#000'
+    },
+    /**
+     * @description 千位分隔符
+     */
+    separator: {
+        type: String,
+        required: false,
+        default: ''
+    }
+}
 
 export type DigitalFlopProps = ExtractPropTypes<typeof digitalFlopProps>;
 
@@ -67,7 +129,10 @@ export const EDigitalFlop = withInstall(defineComponent({
         });
 
         return () => (
-            <span style={styles}>{displayVal.value}</span>
+            <>
+                <GlobalFontStyle></GlobalFontStyle>
+                <span class='e-digital-flop' style={styles}>{displayVal.value}</span>
+            </>
         );
     },
 }));

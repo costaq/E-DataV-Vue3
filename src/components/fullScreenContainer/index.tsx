@@ -2,13 +2,40 @@
  * @Autor: costa
  * @Date: 2023-04-07 10:46:04
  * @LastEditors: costa
- * @LastEditTime: 2023-04-17 11:01:09
+ * @LastEditTime: 2023-05-16 16:32:05
  * @Description: 全屏组件
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import { ExtractPropTypes, defineComponent, onBeforeMount, onMounted } from "vue";
-import { fullScreenContainerProps } from './fullScreenContainer';
 import { withInstall } from '../../utils/common';
+import _ from 'lodash';
+
+const fullScreenContainerProps = {
+    /**
+    * @description full 全部拉伸 | full-width 宽度拉伸 | full-height 高度拉伸 | initial 初始化默认不拉伸
+    */
+    type: {
+        type: String,
+        required: false,
+        default: 'full'
+    },
+    /**
+     * @description 大屏设计稿宽度
+     */
+    width: {
+        type: Number,
+        required: false,
+        default: 1920
+    },
+    /**
+     * @description 大屏设计稿高度
+     */
+    height: {
+        type: Number,
+        required: false,
+        default: 1080
+    }
+}
 
 export type FullScreenContainerProps = ExtractPropTypes<typeof fullScreenContainerProps>;
 
@@ -59,8 +86,6 @@ export const EFullScreenContainer = withInstall(defineComponent({
 
             let style = document.createElement('style');
 
-            style.type = 'text/css';
-
             style.appendChild(document.createTextNode(css));
 
             head.appendChild(style);
@@ -68,12 +93,11 @@ export const EFullScreenContainer = withInstall(defineComponent({
 
         onBeforeMount(() => {
             scale();
-
-            window.onresize = () => scale()
+            window.addEventListener('resize', _.debounce(scale, 100));
         });
 
         return () => (
-            <>{slots['default'] && slots['default']()}</>
+            <>{slots.default?.()}</>
         );
     },
 }));

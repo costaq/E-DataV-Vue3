@@ -2,7 +2,7 @@
 
 * E-DataV是一个基于**Vue3**的数据可视化组件库（[Vue2版本](https://github.com/costaq/E-DataV)）
 * 提供数据可视化大屏所需的各种组件，朋友写的[DataV](https://github.com/DataV-Team/DataV)组件库中已有的组件，我这边不会过多增加，最多是效果提升
-* 因工作原因及个人比较佛系，更新会比较慢，但会持续更新，后续计划增加React版本，然后同步更新三个版本中的可视化组件
+* 因工作原因及个人比较佛系，更新会比较慢，但会持续更新
 
 
 ### npm安装
@@ -42,7 +42,7 @@ import { EDigitalFlop } from 'e-datav-vue3';
     </div>
 </body>
 <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-<script src="https://unpkg.com/e-datav-vue3/dist/e-datav-vue3.umd.js"></script>
+<script src="https://unpkg.com/e-datav-vue3/umd/e-datav-vue3.umd.js"></script>
 <script>
     const { createApp } = Vue;
     const { EDigitalFlop, EFullScreenContainer } = EDataV;
@@ -115,3 +115,33 @@ import { EDigitalFlop, EFullScreenContainer } from 'e-datav-vue3';
 type|String|数值，默认'full', 其他可选类型：full（全屏拉伸） full-width（宽度拉伸 ）full-height（高度拉伸）initial （默认不拉伸）
 width|Number|大屏设计稿宽度，也就是公司设计师出的效果图尺寸，默认1920
 height|Number|大屏设计稿高度，默认1080
+
+
+#### 边框组件
+
+边框组件1
+
+```js
+
+// Portal.vue
+<template>
+    <div style="width:200px;height:200px;">
+        <e-border-box-1>
+            <e-digital-flop />
+        </e-border-box-1>
+    </div>
+</template>
+<script setup>
+import { EDigitalFlop, EBorderBox1 } from 'e-datav-vue3';
+</script>
+
+```
+
+##### 可选参数
+字段|类型|备注
+-|-|-
+borderRadius|Number|边框圆角，默认值3
+borderWidth|Number|边框宽度，默认值3
+startColor|String|渐变开始颜色，默认值#5ddcff
+endColor|String|渐变结束颜色，默认值#4e00c2
+duration|Number|动画持续时间，默认值4，单位秒

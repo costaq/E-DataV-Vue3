@@ -12,6 +12,7 @@
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "noEmit": true,
+    // "noImplicitAny": false,
     // "allowImportingTsExtensions": true,
     "allowJs": true,
     "types": [

@@ -8,14 +8,16 @@
  */
 import { EDigitalFlop } from './components/digitalFlop';
 import { EFullScreenContainer } from './components/fullScreenContainer';
+import { EBorderBox1 } from './components/border-box-1';
 import type { App } from 'vue';
 
 export default function EDataV(app: App) {
-    const components = [EDigitalFlop, EFullScreenContainer];
+    const components = [EDigitalFlop, EFullScreenContainer, EBorderBox1];
 
     components.forEach(component => app.component(component.name, component));
 }
 
 export * from './components/digitalFlop';
 export * from './components/fullScreenContainer';
+export * from './components/border-box-1';
 

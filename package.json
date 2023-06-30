@@ -1,6 +1,6 @@
 {
   "name": "e-datav-vue3",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "main": "./cjs/index.cjs",
   "module": "./es/index.js",
@@ -16,6 +16,11 @@
     "datav",
     "e-datav"
   ],
+  "files": [
+    "es",
+    "lib",
+    "umd"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/costaq/E-DataV-Vue3.git"
@@ -27,11 +32,11 @@
   "homepage": "https://github.com/costaq/E-DataV-Vue3#readme",
   "dependencies": {
     "D": "^1.0.0",
-    "sass": "^1.60.0",
     "vite-plugin-dts": "^2.2.0",
     "vue": "^3.2.47"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.194",
     "@types/node": "^18.15.11",
     "@typescript-eslint/eslint-plugin": "^5.43.0",
     "@vitejs/plugin-vue": "^4.1.0",
@@ -41,8 +46,10 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
+    "lodash": "^4.17.21",
     "typescript": "*",
     "vite": "^4.2.0",
-    "vue-tsc": "^1.2.0"
+    "vue-tsc": "^1.2.0",
+    "vue3-styled-components": "^1.2.1"
   }
 }

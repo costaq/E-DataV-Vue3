@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-04 15:42:54
  * @LastEditors: costa
- * @LastEditTime: 2023-06-30 09:26:28
+ * @LastEditTime: 2023-07-06 14:30:00
  * @Description: 组件install工具类
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -18,4 +18,12 @@ export function withInstall<T>(comp: T) {
     };
 
     return c;
+}
+
+/**
+ * 生成不重复ID
+ */
+export function genNonDuplicateID() {
+    let idStr = Date.now().toString(36) + Math.random().toString(36).substring(3);
+    return idStr
 }

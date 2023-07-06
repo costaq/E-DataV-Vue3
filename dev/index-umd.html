@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-14 13:59:05
  * @LastEditors: costa
- * @LastEditTime: 2023-06-09 16:45:21
+ * @LastEditTime: 2023-07-06 14:05:40
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
@@ -21,6 +21,7 @@
             <div style="width:200px;height:200px;margin-left:200px;">
                 <e-border-box-1>
                     <e-digital-flop :value="9999" separator="," color="#c75151"></e-digital-flop>
+                    <e-water-level-pond :width="200" :height="200" :value="56" :background-color="'#000'" />
                 </e-border-box-1>
             </div>
             
@@ -32,12 +33,13 @@
 <!-- <script src="https://unpkg.com/e-datav-vue3/umd/e-datav-vue3.umd.js"></script> -->
 <script>
     const { createApp } = Vue;
-    const { EDigitalFlop, EFullScreenContainer, EBorderBox1 } = EDataV;
+    const { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond } = EDataV;
 
     const App = createApp();
     App.component('EDigitalFlop', EDigitalFlop);
     App.component('EBorderBox1', EBorderBox1);
     App.component('EFullScreenContainer', EFullScreenContainer);
+    App.component('EWaterLevelPond', EWaterLevelPond);
     App.mount('#app');
 </script>
 

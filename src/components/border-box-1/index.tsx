@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-05-11 16:51:20
  * @LastEditors: costa
- * @LastEditTime: 2023-06-21 14:54:43
+ * @LastEditTime: 2023-07-06 13:57:39
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -29,20 +29,15 @@ const borderBoxProps = {
         default: 3
     },
     /**
-     * @description 渐变开始颜色
+     * @description 渐变颜色
      */
-    startColor: {
-        type: String,
+    colors: {
+        type: Array<String>,
         required: false,
-        default: '#5ddcff'
-    },
-    /**
-     * @description 渐变结束颜色
-     */
-    endColor: {
-        type: String,
-        required: false,
-        default: '#4e00c2'
+        default: ['#5ddcff', '#4e00c2'],
+        validator(value: Array<String>) {
+            return value.length === 2
+        }
     },
     /**
      * @description 动画持续时间
@@ -61,7 +56,9 @@ export const EBorderBox1 = withInstall(defineComponent({
     props: borderBoxProps,
     setup(props, { slots }) {
         const { domRef, domSize } = useResize();
-        const { borderRadius, borderWidth, startColor, endColor, duration } = props;
+        const { borderRadius, borderWidth, colors, duration } = props;
+        const startColor = String(colors.at(0));
+        const endColor = String(colors.at(1));
 
         return () => (
             <BorderBox className='e-border-box-1' ref={domRef}>

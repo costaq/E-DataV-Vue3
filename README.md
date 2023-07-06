@@ -87,6 +87,38 @@ color|String|颜色，默认#000
 separator|String|千位分隔符，默认''
 
 
+#### 水位图
+
+```js
+
+// Portal.vue
+<template>
+    <div>
+        <e-water-level-pond :width="200" :height="200" :value="56" :background-color="'#000'" />
+    </div>
+</template>
+<script setup>
+import { EWaterLevelPond } from 'e-datav-vue3';
+</script>
+```
+##### 效果演示
+
+<img src="./images/water-level-pond.gif">
+
+##### 可选参数
+字段|类型|备注
+-|-|-
+value|Number|数值，必填
+height|Number|高度，默认为100%，根据父元素拉伸
+width|Number|宽度，默认为100%，根据父元素拉伸
+decimals|Number|小数点，默认0
+duration|Number|数字变动时动画持续时间，默认3000毫秒
+fontSize|Number|字体大小，默认36
+fontColor|String|颜色，默认#000
+backgroundColor|String|背景色颜色，默认transparent透明
+waveColors|String[]|水波颜色，默认['#41a9e3', '#b0e0ff']，第一个参数为前波浪，后一个参数为后波浪
+
+
 #### 全屏组件
 
 根据屏幕尺寸，自动拉伸
@@ -137,11 +169,14 @@ import { EDigitalFlop, EBorderBox1 } from 'e-datav-vue3';
 
 ```
 
+##### 效果演示
+
+<img src="./images/border-box-1.gif">
+
 ##### 可选参数
 字段|类型|备注
 -|-|-
 borderRadius|Number|边框圆角，默认值3
 borderWidth|Number|边框宽度，默认值3
-startColor|String|渐变开始颜色，默认值#5ddcff
-endColor|String|渐变结束颜色，默认值#4e00c2
+colors|String[]|渐变颜色，默认值['#5ddcff', '#4e00c2']，只接受2个值
 duration|Number|动画持续时间，默认值4，单位秒

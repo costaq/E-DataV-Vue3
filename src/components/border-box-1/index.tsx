@@ -2,12 +2,12 @@
  * @Autor: costa
  * @Date: 2023-05-11 16:51:20
  * @LastEditors: costa
- * @LastEditTime: 2023-07-06 13:57:39
+ * @LastEditTime: 2023-07-10 16:41:13
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import { ExtractPropTypes, defineComponent } from 'vue';
-import { withInstall } from '../../utils/common';
+import { genNonDuplicateID, withInstall } from '../../utils/common';
 import { BorderContent, BorderBox, BorderSvgContainer } from '../styled/BorderBox';
 import { useResize } from '../../hooks/useResize';
 
@@ -57,6 +57,7 @@ export const EBorderBox1 = withInstall(defineComponent({
     setup(props, { slots }) {
         const { domRef, domSize } = useResize();
         const { borderRadius, borderWidth, colors, duration } = props;
+        const symbolId = genNonDuplicateID();
         const startColor = String(colors.at(0));
         const endColor = String(colors.at(1));
 
@@ -64,7 +65,7 @@ export const EBorderBox1 = withInstall(defineComponent({
             <BorderBox className='e-border-box-1' ref={domRef}>
                 <BorderSvgContainer height={domSize.height} width={domSize.width}>
                     <defs>
-                        <linearGradient id='gradient1' x1='50%' y1='0%' x2='75%' y2='100%' >
+                        <linearGradient id={symbolId} x1='50%' y1='0%' x2='75%' y2='100%' >
                             <stop offset='0%' stop-color={startColor}>
                                 <animate
                                     attributeName='stop-color'
@@ -88,7 +89,7 @@ export const EBorderBox1 = withInstall(defineComponent({
                         rx={borderRadius}
                         height={domSize.height > 0 ? domSize.height - borderWidth * 2: 0}
                         width={domSize.width > 0 ? domSize.width - borderWidth * 2: 0}
-                        stroke='url("#gradient1")'
+                        stroke={`url("#${symbolId}")`}
                         fill='transparent'
                         stroke-width={borderWidth}
                     />

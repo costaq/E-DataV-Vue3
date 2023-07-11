@@ -2,11 +2,11 @@
  * @Autor: costa
  * @Date: 2023-05-11 16:51:20
  * @LastEditors: costa
- * @LastEditTime: 2023-07-10 16:41:13
+ * @LastEditTime: 2023-07-11 10:55:29
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
-import { ExtractPropTypes, defineComponent } from 'vue';
+import { ExtractPropTypes, PropType, defineComponent } from 'vue';
 import { genNonDuplicateID, withInstall } from '../../utils/common';
 import { BorderContent, BorderBox, BorderSvgContainer } from '../styled/BorderBox';
 import { useResize } from '../../hooks/useResize';
@@ -32,10 +32,10 @@ const borderBoxProps = {
      * @description 渐变颜色
      */
     colors: {
-        type: Array<String>,
+        type: Array as PropType<string[]>,
         required: false,
-        default: ['#5ddcff', '#4e00c2'],
-        validator(value: Array<String>) {
+        default: () => ['#5ddcff', '#4e00c2'],
+        validator(value: string[]) {
             return value.length === 2
         }
     },

@@ -2,15 +2,14 @@
  * @Autor: costa
  * @Date: 2023-06-30 16:59:40
  * @LastEditors: costa
- * @LastEditTime: 2023-07-06 14:33:17
+ * @LastEditTime: 2023-07-11 10:57:01
  * @Description: 水位图
  * @Copyright: © 2023 by costa. All rights reserved.
  */
-import { ExtractPropTypes, defineComponent, onMounted, ref, watch } from "vue";
+import { ExtractPropTypes, PropType, defineComponent, onMounted, ref, watch } from "vue";
 import { genNonDuplicateID, withInstall } from "../../utils/common";
 import { BoxContainer } from "./boxContainer";
 import { animation } from "../../utils/animation";
-import { ThemeProvider } from "vue3-styled-components";
 
 const waterLevelPondProps = {
     /**
@@ -85,10 +84,10 @@ const waterLevelPondProps = {
      * @description 波浪颜色
      */
     waveColors: {
-        type: Array<String>,
+        type: Array as PropType<string[]>,
         required: false,
-        default: ['#41a9e3', '#b0e0ff'],
-        validator(value: Array<String>) {
+        default: () => ['#41a9e3', '#b0e0ff'],
+        validator(value: string[]) {
             return value.length === 2
         }
     }

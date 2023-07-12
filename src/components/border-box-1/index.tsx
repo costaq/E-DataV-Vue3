@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-05-11 16:51:20
  * @LastEditors: costa
- * @LastEditTime: 2023-07-11 10:55:29
+ * @LastEditTime: 2023-07-11 14:48:42
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -58,8 +58,8 @@ export const EBorderBox1 = withInstall(defineComponent({
         const { domRef, domSize } = useResize();
         const { borderRadius, borderWidth, colors, duration } = props;
         const symbolId = genNonDuplicateID();
-        const startColor = String(colors.at(0));
-        const endColor = String(colors.at(1));
+        const startColor = colors.at(0);
+        const endColor = colors.at(1);
 
         return () => (
             <BorderBox className='e-border-box-1' ref={domRef}>

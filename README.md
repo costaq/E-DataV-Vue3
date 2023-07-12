@@ -94,7 +94,8 @@ separator|String|千位分隔符，默认''
 // Portal.vue
 <template>
     <div>
-        <e-water-level-pond :width="200" :height="200" :value="56" :background-color="'#000'" />
+        <!-- 不通过样式设置宽高，则会根据父元素100%拉伸 -->
+        <e-water-level-pond style="width:200px;height:200px;" :value="56" :background-color="'#000'" />
     </div>
 </template>
 <script setup>
@@ -109,8 +110,6 @@ import { EWaterLevelPond } from 'e-datav-vue3';
 字段|类型|备注
 -|-|-
 value|Number|数值，必填
-height|Number|高度，默认为100%，根据父元素拉伸
-width|Number|宽度，默认为100%，根据父元素拉伸
 decimals|Number|小数点，默认0
 duration|Number|数字变动时动画持续时间，默认3000毫秒
 fontSize|Number|字体大小，默认36
@@ -150,6 +149,8 @@ height|Number|大屏设计稿高度，默认1080
 
 
 #### 边框组件
+
+所有边框组件，根据父容器宽高自适应
 
 边框组件1
 

@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-07 15:06:20
  * @LastEditors: costa
- * @LastEditTime: 2023-07-17 10:52:43
+ * @LastEditTime: 2023-07-17 14:36:07
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
@@ -17,8 +17,14 @@
                     
                 </e-border-box-1>
             </div> -->
-            <e-water-level-pond style="width:200px;height:200px;" :value="36" :background-color="'#000'" />
-            <e-tab style="width:500px;height: 100px;" :items="items" :columns="3" @change="handleClick"></e-tab>
+            <div style="width: 200px;height:200px;">
+                <e-water-level-pond :value="36" :background-color="'#000'" />
+                
+            </div>
+            <div style="width:500px;height: 100px;">
+                <e-tab :items="items" :columns="3" @change="handleClick"></e-tab>
+            </div>
+            
 
         </e-full-screen-container>
     </div>

@@ -99,6 +99,7 @@ separator|String|千位分隔符，默认''
 // Portal.vue
 <template>
     <div>
+        <!-- 若不通过样式设置宽高，则根据父元素100%拉伸 -->
         <e-water-level-pond style="width:200px;height:200px;" :value="56" :background-color="'#000'" />
     </div>
 </template>
@@ -128,6 +129,7 @@ waveColors|String[]|水波颜色，默认['#41a9e3', '#b0e0ff']，第一个参�
 
 // Portal.vue
 <template>
+    <!-- 若不通过样式设置宽高，则根据父元素100%拉伸 -->
     <e-tab style="width:500px;height: 100px;" :items="items" :columns="3" @change="handleClick"></e-tab>
 </template>
 <script setup>

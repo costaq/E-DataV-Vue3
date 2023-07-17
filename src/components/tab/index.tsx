@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-07-13 13:45:46
  * @LastEditors: costa
- * @LastEditTime: 2023-07-17 10:57:38
+ * @LastEditTime: 2023-07-17 14:35:19
  * @Description: Tab组件
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -151,7 +151,7 @@ export const ETab = withInstall(defineComponent({
         }
 
         return () => (
-            <ThemeProvider class="e-tabs" style="position:relative" theme={{}}>
+            <ThemeProvider class="e-tabs" style="position:relative;width:100%;height:100%;" theme={{}}>
                 <Tab ref={domRef}>
                     {
                         items.map(item => (

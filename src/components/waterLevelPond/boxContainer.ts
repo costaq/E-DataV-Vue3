@@ -2,13 +2,13 @@
  * @Autor: costa
  * @Date: 2023-07-05 16:38:51
  * @LastEditors: costa
- * @LastEditTime: 2023-07-17 11:27:34
+ * @LastEditTime: 2023-07-17 14:32:21
  * @Description: 外容器
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import styled from "vue3-styled-components";
 
-const boxContainerProps = {
+const boxContentProps = {
     fontSize: { type: Number, default: 12 },
     fontColor: { type: String, default: '#fff' },
     backgroundColor: { type: String, default: 'transparent' }
@@ -21,9 +21,11 @@ const waterWaveProps = {
 
 export const BoxContainer = styled.div`
     position: relative;
+    height: 100%;
+    width: 100%;
 `;
 
-export const BoxContent = styled('div', boxContainerProps)`
+export const BoxContent = styled('div', boxContentProps)`
     height: 100%;
     width: 100%;
     position: absolute;

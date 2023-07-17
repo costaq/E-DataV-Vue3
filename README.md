@@ -166,7 +166,7 @@ const handleClick = (value) => {
 ##### 可选参数
 字段|类型|备注
 -|-|-
-value|Number或String|非必填，必须是数字或字符串
+value|Number或String|非必填，必须是数字或字符串，指定当前值，若不指定，则会默认选中items中的第一个
 items|TabItem[]|项，必填
 columns|Number|列数，非必填，默认值3，表示显示3列，单竖列效果即传值1即可
 margin|Number|间距，非必填，默认每项间距10px
@@ -182,6 +182,10 @@ borderColors|Number|边框渐变颜色，非必填，默认值['#1CE3B6', '#1F38
 label|String|显示名
 value|Number或String|值，必须是数字或字符串
 
+###### 事件
+事件名称|说明|回调参数
+-|-|-
+change|值变化时触发的事件|选中的item值
 
 #### 全屏组件
 

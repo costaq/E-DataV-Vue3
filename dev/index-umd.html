@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-14 13:59:05
  * @LastEditors: costa
- * @LastEditTime: 2023-07-12 15:54:49
+ * @LastEditTime: 2023-07-17 13:01:17
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
@@ -18,10 +18,11 @@
 <body>
     <div id="app">
         <e-full-screen-container>
-            <div style="width:200px;height:200px;margin-left:200px;">
+            <div style="width:500px;height:500px;margin-left:200px;">
                 <e-border-box-1>
                     <e-digital-flop :value="9999" separator="," color="#c75151"></e-digital-flop>
-                    <e-water-level-pond style="width: 150px;height:150px;" :value="56" :background-color="'#000'" />
+                    <e-water-level-pond style="width: 150px;height:150px;" :value="56" :background-color="'#000'"></e-water-level-pond>
+                    <e-tab style="width:500px;height: 100px;" :items="[{label: '222', value: '222'}]" :columns="3"></e-tab>
                 </e-border-box-1>
             </div>
             
@@ -33,13 +34,14 @@
 <!-- <script src="https://unpkg.com/e-datav-vue3/umd/e-datav-vue3.umd.js"></script> -->
 <script>
     const { createApp } = Vue;
-    const { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond } = EDataV;
+    const { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab } = EDataV;
 
     const App = createApp();
     App.component('EDigitalFlop', EDigitalFlop);
     App.component('EBorderBox1', EBorderBox1);
     App.component('EFullScreenContainer', EFullScreenContainer);
     App.component('EWaterLevelPond', EWaterLevelPond);
+    App.component('ETab', ETab);
     App.mount('#app');
 </script>
 

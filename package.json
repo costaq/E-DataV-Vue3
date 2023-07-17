@@ -1,6 +1,6 @@
 {
   "name": "e-datav-vue3",
-  "version": "0.3.3",
+  "version": "0.4.0",
   "type": "module",
   "main": "./cjs/index.cjs",
   "module": "./es/index.js",

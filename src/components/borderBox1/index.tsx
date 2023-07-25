@@ -2,13 +2,14 @@
  * @Autor: costa
  * @Date: 2023-05-11 16:51:20
  * @LastEditors: costa
- * @LastEditTime: 2023-07-11 14:48:42
+ * @LastEditTime: 2023-07-25 10:49:42
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import { ExtractPropTypes, PropType, defineComponent } from 'vue';
 import { genNonDuplicateID, withInstall } from '../../utils/common';
-import { BorderContent, BorderBox, BorderSvgContainer } from '../styled/BorderBox';
+import { BorderContent, BorderSvgContainer } from '../styled/BorderBox';
+import { GlobalBox } from '../styled/GlobalBox';
 import { useResize } from '../../hooks/useResize';
 
 const borderBoxProps = {
@@ -62,7 +63,7 @@ export const EBorderBox1 = withInstall(defineComponent({
         const endColor = colors.at(1);
 
         return () => (
-            <BorderBox className='e-border-box-1' ref={domRef}>
+            <GlobalBox className='e-border-box-1' ref={domRef}>
                 <BorderSvgContainer height={domSize.height} width={domSize.width}>
                     <defs>
                         <linearGradient id={symbolId} x1='50%' y1='0%' x2='75%' y2='100%' >
@@ -97,7 +98,7 @@ export const EBorderBox1 = withInstall(defineComponent({
                 <BorderContent>
                     {slots.default?.()}
                 </BorderContent>
-            </BorderBox>
+            </GlobalBox>
         );
     },
 }));

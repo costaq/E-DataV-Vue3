@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-07-05 16:38:51
  * @LastEditors: costa
- * @LastEditTime: 2023-07-17 14:32:21
+ * @LastEditTime: 2023-07-25 09:49:22
  * @Description: 外容器
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -18,12 +18,6 @@ const waterWaveProps = {
     value: { type: Number, default: 0 },
     waveColors: { type: Array<String>, default: () => [] }
 }
-
-export const BoxContainer = styled.div`
-    position: relative;
-    height: 100%;
-    width: 100%;
-`;
 
 export const BoxContent = styled('div', boxContentProps)`
     height: 100%;

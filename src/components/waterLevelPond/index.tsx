@@ -2,14 +2,15 @@
  * @Autor: costa
  * @Date: 2023-06-30 16:59:40
  * @LastEditors: costa
- * @LastEditTime: 2023-07-17 11:26:17
+ * @LastEditTime: 2023-07-25 10:52:51
  * @Description: 水位图
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import { ExtractPropTypes, PropType, defineComponent, onMounted, ref, watch } from "vue";
 import { genNonDuplicateID, withInstall } from "../../utils/common";
-import { BoxContainer, BoxContent, WaterWave } from "./boxContainer";
+import { BoxContent, WaterWave } from "./boxContainer";
 import { animation } from "../../utils/animation";
+import { GlobalBox } from "../styled/GlobalBox";
 
 const waterLevelPondProps = {
     /**
@@ -106,7 +107,7 @@ export const EWaterLevelPond = withInstall(defineComponent({
         }
 
         return () => (
-            <BoxContainer class="water-level-pond">
+            <GlobalBox className='water-level-pond'>
                 <BoxContent fontSize={fontSize} fontColor={fontColor} backgroundColor={backgroundColor}>
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" style="display: none;">
                         <symbol id={symbolId}>
@@ -129,7 +130,7 @@ export const EWaterLevelPond = withInstall(defineComponent({
                         </svg>
                     </WaterWave>
                 </BoxContent>
-            </BoxContainer>
+            </GlobalBox>
         );
     },
 }));

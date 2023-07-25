@@ -1,4 +1,3 @@
-import { ExtractPropTypes, defineComponent } from "vue";
 import styled, { ThemeProvider, css } from "vue3-styled-components";
 
 const position = css`
@@ -18,20 +17,3 @@ export const BorderSvgContainer = styled.svg`
     top: 0px;
     left: 0px;
 `;
-
-export const BorderBox = defineComponent({
-    props: {
-        className: {
-            type: String,
-            required: true
-        }
-    },
-    setup(props, { slots }) {
-        const { className } = props;
-        return () => (
-            <ThemeProvider class={className} style={position} theme={{}}>
-                {slots.default?.()}
-            </ThemeProvider>
-        )
-    }
-})

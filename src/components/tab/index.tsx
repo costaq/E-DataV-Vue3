@@ -2,13 +2,13 @@
  * @Autor: costa
  * @Date: 2023-07-13 13:45:46
  * @LastEditors: costa
- * @LastEditTime: 2023-07-17 14:35:19
+ * @LastEditTime: 2023-07-28 16:13:19
  * @Description: Tab组件
  * @Copyright: © 2023 by costa. All rights reserved.
  */
-import { ExtractPropTypes, computed, defineComponent, onMounted, reactive, ref, watch } from "vue";
+import { ExtractPropTypes, computed, defineComponent, onMounted, reactive, ref, watch, PropType, VNode } from "vue";
 import { genNonDuplicateID, withInstall } from "../../utils/common";
-import { Tab, TabItem } from './tab';
+import { ItemBorder, ItemIcon, ItemText, Tab, ItemContent, TabItem } from './tab';
 import { useResize, DomSize } from "../../hooks/useResize";
 import { ThemeProvider } from "vue3-styled-components";
 
@@ -23,6 +23,10 @@ export type TabItem = {
      * @description 选中值
      */
     value: TabItemValue;
+    /**
+     * @description 图标
+     */
+    icon?: () => VNode | VNode;
 }
 
 const tabProps = {
@@ -156,26 +160,32 @@ export const ETab = withInstall(defineComponent({
                     {
                         items.map(item => (
                             <TabItem class={selectedValue.value === item.value ? 'active' : ''}
-                                key={`${item.value}`} margin={margin} width={itemSize.value.width} height={itemSize.value.height} duration={duration}
-                                fontColor={fontColor} fontSize={fontSize} backgroundColor={backgroundColor}
-                                onClick={($event) => handleClick($event, item.value)}
-                                version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px">
-                                <defs>
-                                    {/* 模糊 */}
-                                    <filter id={`svg-blur-${symbolId}`} x="0" y="0" width={itemSize.value.width} height={itemSize.value.height}>
-                                        <feOffset result="offOut" in="SourceGraphic" dx="2" dy="2" />
-                                        <feGaussianBlur in="offOut" result="blurout" stdDeviation="5" />
-                                        <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
-                                    </filter>
-                                    {/* 渐变颜色 */}
-                                    <linearGradient id={`svg-gradient-${symbolId}`} gradientUnits="userSpaceOnUse" x1="0%" y1="100%" x2="100%" y2="0%">
-                                        {
-                                            borderColors.map((color, index) => <stop offset={`${index / (borderColors.length - 1) * 100}%`} stop-color={color} />)
-                                        }
-                                    </linearGradient>
-                                </defs>
-                                <rect filter={`url(#svg-blur-${symbolId})`} stroke={`url(#svg-gradient-${symbolId})`} rx="10"></rect>
-                                <text x={itemSize.value.width / 2} y={itemSize.value.height / 2}>{item.label}</text>
+                            key={`${item.value}`} margin={margin} width={itemSize.value.width} height={itemSize.value.height} duration={duration}
+                            backgroundColor={backgroundColor}
+                            onClick={($event) => handleClick($event, item.value)}>
+                                <ItemBorder
+                                    version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px">
+                                    <defs>
+                                        {/* 模糊 */}
+                                        <filter id={`svg-blur-${symbolId}`} x="0" y="0" width={itemSize.value.width} height={itemSize.value.height}>
+                                            <feOffset result="offOut" in="SourceGraphic" dx="2" dy="2" />
+                                            <feGaussianBlur in="offOut" result="blurout" stdDeviation="5" />
+                                            <feBlend in="SourceGraphic" in2="blurOut" mode="normal" />
+                                        </filter>
+                                        {/* 渐变颜色 */}
+                                        <linearGradient id={`svg-gradient-${symbolId}`} gradientUnits="userSpaceOnUse" x1="0%" y1="100%" x2="100%" y2="0%">
+                                            {
+                                                borderColors.map((color, index) => <stop offset={`${index / (borderColors.length - 1) * 100}%`} stop-color={color} />)
+                                            }
+                                        </linearGradient>
+                                    </defs>
+                                    <rect filter={`url(#svg-blur-${symbolId})`} stroke={`url(#svg-gradient-${symbolId})`} rx="10"></rect>
+                                    {/* <text x={itemSize.value.width / 2} y={itemSize.value.height / 2}>{item.label}</text> */}
+                                </ItemBorder>
+                                <ItemContent fontSize={fontSize} fontColor={fontColor}>
+                                    <ItemIcon>{typeof item.icon === 'function' ? item.icon() : item.icon}</ItemIcon>
+                                    <ItemText>{item.label}</ItemText>
+                                </ItemContent>
                             </TabItem>
                         ))
                     }

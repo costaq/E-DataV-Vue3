@@ -13,10 +13,34 @@ import { GlobalBox } from "../styled/GlobalBox";
 import { useResize } from "../../hooks/useResize";
 
 const borderBoxProps = {
-    borderColor: { type: String, default: "#4cc7f3" },
-    borderWidth: { type: Number, default: 2 },
-    lineWidth: { type: Number, default: 10 },
-    backgroundColor: { type: String, default: 'rgba(76, 199, 243, 0.15)' }
+    /**
+     * @description 边框颜色
+     */
+    borderColor: {
+        type: String,
+        default: "#4cc7f3"
+    },
+    /**
+     * @description 边框宽度
+     */
+    borderWidth: { 
+        type: Number, 
+        default: 2 
+    },
+    /**
+     * @description 边框线长度
+     */
+    lineWidth: { 
+        type: Number, 
+        default: 10 
+    },
+    /**
+     * @description 背景色
+     */
+    backgroundColor: { 
+        type: String, 
+        default: 'rgba(76, 199, 243, 0.15)' 
+    }
 };
 
 export type EBorderBox2Props = ExtractPropTypes<typeof borderBoxProps>;

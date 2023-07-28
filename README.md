@@ -136,19 +136,25 @@ waveColors|String[]|水波颜色，默认['#41a9e3', '#b0e0ff']，第一个参�
 </template>
 <script setup>
 import { ETab } from 'e-datav-vue3';
+// icon组件可使用其他库，这里只是举例
+import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
+import { h } from 'vue';
 
 const items = [
     {
         label: '测试1',
-        value: '123'
+        value: '123',
+        icon: () => h(MailOutlined)
     },
     {
         label: '测试2',
-        value: '1234'
+        value: '1234',
+        icon: () => h(AppstoreOutlined)
     },
     {
         label: '测试3',
-        value: '1235'
+        value: '1235',
+        icon: () => h(SettingOutlined)
     }
 ]
 
@@ -166,6 +172,10 @@ const handleClick = (value) => {
 横列效果
 
 <img src="./images/tab2.gif">
+
+使用icon效果
+
+<img src="./images/tab3.gif">
 
 ##### 可选参数
 字段|类型|备注
@@ -185,6 +195,7 @@ borderColors|Number|边框渐变颜色，非必填，默认值['#1CE3B6', '#1F38
 -|-|-
 label|String|显示名
 value|Number或String|值，必须是数字或字符串
+icon|Function或者VNode|图标，非必填，可以是函数，也可以是VNode
 
 ###### 事件
 事件名称|说明|回调参数

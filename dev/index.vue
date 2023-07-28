@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-07 15:06:20
  * @LastEditors: costa
- * @LastEditTime: 2023-07-25 16:26:50
+ * @LastEditTime: 2023-07-28 15:30:04
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
@@ -21,7 +21,7 @@
                 <e-water-level-pond :value="36" :background-color="'#000'" />
 
             </div>
-            <div style="width:500px;height: 100px;">
+            <div style="width:500px;height: 100px;margin-top:30px;">
                 <e-tab :items="items" :columns="3" @change="handleClick"></e-tab>
             </div>
             <div>
@@ -34,24 +34,30 @@
         </e-full-screen-container>
     </div>
 </template>
-<script setup>
-import { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2 } from '../src';
-const items = [
+<script lang="ts" setup>
+import { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2, ETabProps, TabItem } from '../src';
+// icon组件可使用其他库，这里只是举例
+import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
+import { h, ref } from 'vue';
+const items: TabItem[] = [
     {
         label: '测试1',
-        value: '123'
+        value: '123',
+        icon: () => h(MailOutlined)
     },
     {
         label: '测试2',
-        value: '1234'
+        value: '1234',
+        icon: () => h(AppstoreOutlined)
     },
     {
         label: '测试3',
-        value: '1235'
+        value: '1235',
+        icon: () => h(SettingOutlined)
     }
 ]
 
-const handleClick = (value) => {
+const handleClick = (value: string) => {
     console.log(value);
 }
 </script>

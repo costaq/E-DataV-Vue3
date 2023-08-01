@@ -29,8 +29,8 @@ import EDataV from 'e-datav-vue3'
 Vue.use(EDataV)
 
 // 按需引入，全局注册
-import { DigitalFlop } from 'e-datav-vue3'
-Vue.use(DigitalFlop)
+import { EDigitalFlop } from 'e-datav-vue3'
+Vue.use(EDigitalFlop)
 
 // 单组件内按需引入
 <script setup>

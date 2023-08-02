@@ -121,7 +121,7 @@ export const EWaterLevelPond = withInstall(defineComponent({
                         <div class="value">{displayVal.value}</div>
                         <div class="suffix">%</div>
                     </div>
-                    <WaterWave value={displayVal.value} waveColors={waveColors}>
+                    <WaterWave symbolId={symbolId} value={displayVal.value} waveColors={waveColors}>
                         <svg viewBox="0 0 560 20" class="water_wave water_wave_back">
                             <use href={`#${symbolId}`}></use>
                         </svg>

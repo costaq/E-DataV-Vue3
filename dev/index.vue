@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-07 15:06:20
  * @LastEditors: costa
- * @LastEditTime: 2023-07-28 15:30:04
+ * @LastEditTime: 2023-08-02 16:11:15
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
@@ -10,18 +10,21 @@
     <div>
         <e-full-screen-container>
             <!-- <div>
-                <e-border-box-1 style="width:500px;height:300px;margin-left:200px;">
+                <e-border-box-1 :colors="['#fff', '#000']" style="width:500px;height:300px;margin-left:200px;">
                     <e-digital-flop />
                     <e-digital-flop />
                     <e-water-level-pond style="width:200px;height:200px;" :value="36" :background-color="'#000'" />
                     
                 </e-border-box-1>
-            </div> -->
+            </div>
             <div style="width: 200px;height:200px;">
                 <e-water-level-pond :value="36" :background-color="'#000'" />
 
+            </div> -->
+            <div style="width:700px;height: 150px;margin-top:30px;">
+                <e-tab :items="items" :columns="3" @change="handleClick"></e-tab>
             </div>
-            <div style="width:500px;height: 100px;margin-top:30px;">
+            <div style="width:700px;height: 500px;margin-top:30px;">
                 <e-tab :items="items" :columns="3" @change="handleClick"></e-tab>
             </div>
             <div>
@@ -37,23 +40,23 @@
 <script lang="ts" setup>
 import { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2, ETabProps, TabItem } from '../src';
 // icon组件可使用其他库，这里只是举例
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
+// import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
 import { h, ref } from 'vue';
 const items: TabItem[] = [
     {
         label: '测试1',
         value: '123',
-        icon: () => h(MailOutlined)
+        // icon: () => h(MailOutlined)
     },
     {
         label: '测试2',
         value: '1234',
-        icon: () => h(AppstoreOutlined)
+        // icon: () => h(AppstoreOutlined)
     },
     {
         label: '测试3',
         value: '1235',
-        icon: () => h(SettingOutlined)
+        // icon: () => h(SettingOutlined)
     }
 ]
 

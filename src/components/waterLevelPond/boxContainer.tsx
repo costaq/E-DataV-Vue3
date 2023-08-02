@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-07-05 16:38:51
  * @LastEditors: costa
- * @LastEditTime: 2023-07-25 09:49:22
+ * @LastEditTime: 2023-08-02 16:10:26
  * @Description: 外容器
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -15,6 +15,7 @@ const boxContentProps = {
 }
 
 const waterWaveProps = {
+    symbolId: { type: String, default: '' },
     value: { type: Number, default: 0 },
     waveColors: { type: Array<String>, default: () => [] }
 }
@@ -65,26 +66,26 @@ export const WaterWave = styled('div', waterWaveProps)`
 .water_wave_back {
     right: 0;
     fill: ${props => props.waveColors[1]};
-    -webkit-animation: wave-back 2s infinite linear;
-    animation: wave-back 2s infinite linear;
+    -webkit-animation: wave-back-${props => props.symbolId} 2s infinite linear;
+    animation: wave-back-${props => props.symbolId} 2s infinite linear;
 }
 
 .water_wave_front {
     left: 0;
     fill: ${props => props.waveColors[0]};
     margin-bottom: -1px;
-    -webkit-animation: wave-front 1s infinite linear;
-    animation: wave-front 1s infinite linear;
+    -webkit-animation: wave-front-${props => props.symbolId} 1s infinite linear;
+    animation: wave-front-${props => props.symbolId} 1s infinite linear;
 }
 
-@keyframes wave-front {
+@keyframes wave-front-${props => props.symbolId} {
     100% {
       -webkit-transform: translate(-50%, 0);
       transform: translate(-50%, 0);
     }
 }
 
-@keyframes wave-back {
+@keyframes wave-back-${props => props.symbolId} {
     100% {
       -webkit-transform: translate(50%, 0);
       transform: translate(50%, 0);

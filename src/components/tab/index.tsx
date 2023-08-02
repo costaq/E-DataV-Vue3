@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-07-13 13:45:46
  * @LastEditors: costa
- * @LastEditTime: 2023-07-28 16:13:19
+ * @LastEditTime: 2023-08-02 15:57:51
  * @Description: Tab组件
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -156,12 +156,12 @@ export const ETab = withInstall(defineComponent({
 
         return () => (
             <ThemeProvider class="e-tabs" style="position:relative;width:100%;height:100%;" theme={{}}>
-                <Tab ref={domRef}>
+                <Tab symbolId={symbolId} length={itemSize.value.width + itemSize.value.height} ref={domRef}>
                     {
                         items.map(item => (
                             <TabItem class={selectedValue.value === item.value ? 'active' : ''}
                             key={`${item.value}`} margin={margin} width={itemSize.value.width} height={itemSize.value.height} duration={duration}
-                            backgroundColor={backgroundColor}
+                            backgroundColor={backgroundColor} symbolId={symbolId}
                             onClick={($event) => handleClick($event, item.value)}>
                                 <ItemBorder
                                     version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px">

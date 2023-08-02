@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-14 13:59:05
  * @LastEditors: costa
- * @LastEditTime: 2023-07-25 16:51:34
+ * @LastEditTime: 2023-08-01 16:24:13
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
@@ -19,7 +19,7 @@
     <div id="app">
         <e-full-screen-container>
             <div style="width:500px;height:500px;margin-left:200px;">
-                <e-border-box-1>
+                <e-border-box-1 :colors="['#fff', '#c75151']">
                     <e-digital-flop :value="9999" separator="," color="#c75151"></e-digital-flop>
                     <e-water-level-pond style="width: 150px;height:150px;" :value="56" :background-color="'#000'"></e-water-level-pond>
                     <e-tab style="width:500px;height: 100px;" :items="[{label: '222', value: '222'}]" :columns="3"></e-tab>

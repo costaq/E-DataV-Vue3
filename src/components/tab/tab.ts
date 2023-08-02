@@ -2,13 +2,14 @@
  * @Autor: costa
  * @Date: 2023-07-13 15:31:04
  * @LastEditors: costa
- * @LastEditTime: 2023-07-28 15:21:49
+ * @LastEditTime: 2023-08-02 16:08:14
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import styled from "vue3-styled-components";
 
 const TabItemProps = {
+    symbolId: { type: String, default: '' },
     width: { type: Number, default: 300 },
     height: { type: Number, default: 300 },
     margin: { type: Number, default: 10 },
@@ -19,6 +20,11 @@ const TabItemProps = {
 const TabItemContentProps = {
     fontSize: { type: Number, default: 16 },
     fontColor: { type: String, default: '#fff' }
+}
+
+const TabProps = {
+    symbolId: { type: String, default: '' },
+    length: { type: Number, default: 300 }
 }
 
 export const TabItem = styled('div', TabItemProps)`
@@ -32,13 +38,13 @@ export const TabItem = styled('div', TabItemProps)`
     &.active {
         rect {
             stroke-dasharray:${props => props.width + props.height}; 
-            animation: blinker-active ${props => props.duration}s linear infinite;
+            animation: blinker-active-${props => props.symbolId} ${props => props.duration}s linear infinite;
         }
     }
 
     &:hover {
         rect {
-            animation: blinker-hover ${props => props.duration}s linear infinite;
+            animation: blinker-hover-${props => props.symbolId} ${props => props.duration}s linear infinite;
         }
     }
 
@@ -49,17 +55,6 @@ export const TabItem = styled('div', TabItemProps)`
         stroke-dasharray: 0 10000;
         stroke-dashoffset: 0;
         stroke-width: 3px;
-    }
-
-    @keyframes blinker-hover {
-        0% { stroke-dashoffset: 0; stroke-dasharray: 0 10000; }
-        50% { stroke-dasharray:${props => props.width + props.height}; }
-        100% { stroke-dashoffset: -${props => (props.width + props.height) * 2}; stroke-dasharray: 10000 0;}
-    }
-
-    @keyframes blinker-active {
-        0% { stroke-dashoffset: 0; }
-        100% { stroke-dashoffset: -${props => (props.width + props.height) * 2};}
     }
 `;
 
@@ -86,8 +81,19 @@ export const ItemText = styled.span`
 
 export const ItemIcon = styled.span``;
 
-export const Tab = styled.div`
+export const Tab = styled('div', TabProps)`
     position: absolute;
     width: 100%;
     height: 100%;
+
+    @keyframes blinker-hover-${props => props.symbolId} {
+        0% { stroke-dashoffset: 0; stroke-dasharray: 0 10000; }
+        50% { stroke-dasharray:${props => props.length}; }
+        100% { stroke-dashoffset: -${props => (props.length) * 2}; stroke-dasharray: 10000 0;}
+    }
+
+    @keyframes blinker-active-${props => props.symbolId} {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: -${props => (props.length) * 2};}
+    }
 `;

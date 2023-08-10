@@ -107,7 +107,7 @@ export const EWaterLevelPond = withInstall(defineComponent({
         }
 
         return () => (
-            <GlobalBox className='water-level-pond'>
+            <GlobalBox className='e-water-level-pond'>
                 <BoxContent fontSize={fontSize} fontColor={fontColor} backgroundColor={backgroundColor}>
                     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" style="display: none;">
                         <symbol id={symbolId}>

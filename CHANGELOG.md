@@ -2,10 +2,20 @@
  * @Autor: costa
  * @Date: 2023-08-02 16:14:59
  * @LastEditors: costa
- * @LastEditTime: 2023-08-02 16:29:58
+ * @LastEditTime: 2023-08-10 11:54:03
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
+# 0.6.0 (2023-08-10)
+
+### Features
+
+* **e-scroll-ranking-board:** 新增了排名轮播表组件
+
+### Bug Fixes
+
+* **e-border-box-2:** 修复了使用后，内部的组件无法正常获取宽高bug
+
 # 0.5.2 (2023-07-29)
 
 ### Bug Fixes

@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-07 15:06:20
  * @LastEditors: costa
- * @LastEditTime: 2023-08-02 16:11:15
+ * @LastEditTime: 2023-08-10 11:48:38
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
@@ -21,16 +21,20 @@
                 <e-water-level-pond :value="36" :background-color="'#000'" />
 
             </div> -->
-            <div style="width:700px;height: 150px;margin-top:30px;">
+            <!-- <div style="width:700px;height: 150px;margin-top:30px;">
                 <e-tab :items="items" :columns="3" @change="handleClick"></e-tab>
             </div>
             <div style="width:700px;height: 500px;margin-top:30px;">
                 <e-tab :items="items" :columns="3" @change="handleClick"></e-tab>
-            </div>
-            <div>
+            </div> -->
+            <div style="margin-top: 100px;margin-left: 100px;height: 400px;width: 200px;">
                 <e-border-box2 :line-width="20" style="width: 200px;height:200px;margin-left: 100px;margin-top:50px;">
-
+                    <e-scroll-ranking-board type="single" :items="rankingItems" :highlightRowNum="4" color="#eee"></e-scroll-ranking-board>
                 </e-border-box2>
+                <!-- <e-border-box3></e-border-box3> -->
+                <e-border-box-1 style="width:500px;height:300px;">
+                    <e-scroll-ranking-board type="single" :items="rankingItems" :highlightRowNum="4" color="#eee"></e-scroll-ranking-board>
+                </e-border-box-1>
             </div>
 
 
@@ -38,7 +42,7 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2, ETabProps, TabItem } from '../src';
+import { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2, ETabProps, TabItem, EScrollRankingBoard } from '../src';
 // icon组件可使用其他库，这里只是举例
 // import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
 import { h, ref } from 'vue';
@@ -59,6 +63,13 @@ const items: TabItem[] = [
         // icon: () => h(SettingOutlined)
     }
 ]
+
+const rankingItems = Array(6).fill(0).map((item, index) => {
+    return {
+        label: `测试${index}`,
+        value: index * 100
+    }
+})
 
 const handleClick = (value: string) => {
     console.log(value);

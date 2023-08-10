@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-14 13:59:05
  * @LastEditors: costa
- * @LastEditTime: 2023-08-01 16:24:13
+ * @LastEditTime: 2023-08-10 11:46:08
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
@@ -13,6 +13,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <style>
+        body {
+            background-color: #000;
+        }
+    </style>
 </head>
 
 <body>
@@ -25,7 +30,10 @@
                     <e-tab style="width:500px;height: 100px;" :items="[{label: '222', value: '222'}]" :columns="3"></e-tab>
                 </e-border-box-1>
             </div>
-            <e-border-box-2 style="width:200px;height:200px;"></e-border-box-2>
+            <e-border-box-2 style="width:200px;height:200px;">
+                
+            </e-border-box-2>
+            <e-scroll-ranking-board style="width:200px;height:200px;" type="single" :items="[{label: '222', value: 222}, {label: '111222', value: 122}]" :highlightRowNum="4"></e-scroll-ranking-board>
         </e-full-screen-container>
     </div>
 </body>
@@ -34,7 +42,7 @@
 <!-- <script src="https://unpkg.com/e-datav-vue3/umd/e-datav-vue3.umd.js"></script> -->
 <script>
     const { createApp } = Vue;
-    const { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2 } = EDataV;
+    const { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2, EScrollRankingBoard } = EDataV;
 
     const App = createApp();
     App.component('EDigitalFlop', EDigitalFlop);
@@ -43,6 +51,7 @@
     App.component('EFullScreenContainer', EFullScreenContainer);
     App.component('EWaterLevelPond', EWaterLevelPond);
     App.component('ETab', ETab);
+    App.component('EScrollRankingBoard', EScrollRankingBoard);
     App.mount('#app');
 </script>
 

@@ -1,3 +1,11 @@
+/*
+ * @Autor: costa
+ * @Date: 2023-07-20 11:08:14
+ * @LastEditors: costa
+ * @LastEditTime: 2023-08-10 11:51:46
+ * @Description: 
+ * @Copyright: © 2023 by costa. All rights reserved.
+ */
 import styled from "vue3-styled-components";
 
 const borderContainerProps = {
@@ -14,8 +22,9 @@ const borderContainerProps = {
  * @summary 通过线性渐变实现，从上开始渐变n个px，然后变成透明n个px，再持续透明，直到最后带颜色的n个px，然后旋转90度，相同方法从左开始画，再定位到右下角，开始画另外2个遍
  */
 export const BorderContainer = styled('div', borderContainerProps)`
-    width: ${props => props.width}px;
-    height: ${props => props.height}px;
+    position: relative;
+    width: 100%;
+    height: 100%;
     background-origin: content-box;
     background-color: ${props => props.backgroundColor};
     background-image:

@@ -12,8 +12,6 @@ const borderContainerProps = {
     borderColor: { type: String, default: "#4cc7f3" },
     borderWidth: { type: Number, default: 2 },
     lineWidth: { type: Number, default: 10 },
-    width: { type: Number, default: 200 },
-    height: { type: Number, default: 200 },
     backgroundColor: { type: String, default: 'rgba(76, 199, 243, 0.15)' }
 };
 

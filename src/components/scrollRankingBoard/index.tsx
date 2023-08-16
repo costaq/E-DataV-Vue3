@@ -1,4 +1,4 @@
-import { ExtractPropTypes, PropType, computed, defineComponent, onMounted, ref, watch } from "vue";
+import { ExtractPropTypes, PropType, computed, defineComponent, onMounted, ref, watch, watchEffect } from "vue";
 import { withInstall } from "../../utils/common";
 import { useResize } from "../../hooks/useResize";
 import { GlobalBox } from "../styled/GlobalBox";
@@ -97,30 +97,28 @@ export const EScrollRankingBoard = withInstall(defineComponent({
     name: 'EScrollRankingBoard',
     props: scrollRankingBoardProps,
     setup(props, { emit }) {
-        const { items, interval, rowNum, type, rankingFontSize, labelFontSize, valueFontSize, highlightColors, highlightRowNum, color } = props;
+        const { interval, rowNum, type, rankingFontSize, labelFontSize, valueFontSize, highlightColors, highlightRowNum, color } = props;
         const { domRef, domSize } = useResize();
         // 所有数据
-        const allData = ref<ScrollRankingBoardItemWithHeight[]>(items.map(_ => ({ ..._, height: 0, ranking: 0 })));
+        const allData = ref<ScrollRankingBoardItemWithHeight[]>([]);
         /// 显示的数据
         const domData = ref<ScrollRankingBoardItemWithHeight[]>([]);
         // 平均高度
         const avgHeight = ref<number>(0);
+        const timer = ref<any>(null);
 
-        
+        // 监听items变化，重新开始动画
+        watch(() => props.items, (newVal) => {
+            clearTimeout(timer.value);
+            init();
+        });
 
         // 监听dom尺寸变化, 重新计算每个item的高度
         watch(domSize, (newVal) => {
             const { height } = newVal;
             const itemHeight = height / rowNum;
             avgHeight.value = itemHeight;
-            let newData = [...allData.value];
-            newData = newData.sort((a, b) => b.value - a.value);
-            newData.forEach((item, i) => {
-                item.ranking = i + 1;
-                item.height = itemHeight;
-            });
-            allData.value = newData;
-            domData.value = newData.slice(0, rowNum);
+            init();
         });
 
         // 默认高亮颜色
@@ -133,11 +131,22 @@ export const EScrollRankingBoard = withInstall(defineComponent({
             return type === 'single' ? 1 : rowNum;
         });
 
+        // 初始化值并开始动画
+        const init = () => {
+            let newData = [...props.items as ScrollRankingBoardItemWithHeight[]];
+            newData = newData.sort((a, b) => b.value - a.value);
+            newData = newData.map((item, index) => ({ ...item, height: avgHeight.value, ranking: index + 1 }));
+            allData.value = newData;
+            domData.value = newData.slice(0, rowNum);
+
+            animation();
+        }
+
         // 滚动动画
         const animation = () => {
             // 若记录数小于等于显示行数, 则不滚动
             if (allData.value.length <= rowNum) return;
-            const timer = setInterval(() => {
+            timer.value = setInterval(() => {
                 let newData = [...allData.value];
                 // 将即将要删除的元素高度设置为0
                 newData.forEach((item, i) => {
@@ -168,21 +177,15 @@ export const EScrollRankingBoard = withInstall(defineComponent({
                 }, 300);
 
             }, interval);
-
-            return () => {
-                clearInterval(timer);
-            }
         }
 
         onMounted(() => {
-            let clear = animation();
-
             domRef.value?.$el.addEventListener('mouseenter', () => {
-                typeof clear === 'function' && clear();
+                clearInterval(timer.value);
             });
 
             domRef.value?.$el.addEventListener('mouseleave', () => {
-                clear = animation();
+                animation();
             });
         });
 

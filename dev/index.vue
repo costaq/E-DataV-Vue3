@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-07 15:06:20
  * @LastEditors: costa
- * @LastEditTime: 2023-08-10 11:48:38
+ * @LastEditTime: 2023-08-16 12:36:31
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
@@ -29,14 +29,16 @@
             </div> -->
             <div style="margin-top: 100px;margin-left: 100px;height: 400px;width: 200px;">
                 <e-border-box2 :line-width="20" style="width: 200px;height:200px;margin-left: 100px;margin-top:50px;">
-                    <e-scroll-ranking-board type="single" :items="rankingItems" :highlightRowNum="4" color="#eee"></e-scroll-ranking-board>
+                    <e-scroll-ranking-board type="single" :items="rankingItems.items" :highlightRowNum="4"
+                        color="#eee"></e-scroll-ranking-board>
                 </e-border-box2>
                 <!-- <e-border-box3></e-border-box3> -->
                 <e-border-box-1 style="width:500px;height:300px;">
-                    <e-scroll-ranking-board type="single" :items="rankingItems" :highlightRowNum="4" color="#eee"></e-scroll-ranking-board>
+                    <e-scroll-ranking-board type="single" :items="rankingItems.items" :highlightRowNum="4" :interval="interval"
+                        color="#eee"></e-scroll-ranking-board>
                 </e-border-box-1>
             </div>
-
+            <input type="button" value="测试" @click="() => handleChangeItems()" />
 
         </e-full-screen-container>
     </div>
@@ -45,7 +47,7 @@
 import { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2, ETabProps, TabItem, EScrollRankingBoard } from '../src';
 // icon组件可使用其他库，这里只是举例
 // import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
-import { h, ref } from 'vue';
+import { h, reactive, ref, watch } from 'vue';
 const items: TabItem[] = [
     {
         label: '测试1',
@@ -64,12 +66,33 @@ const items: TabItem[] = [
     }
 ]
 
-const rankingItems = Array(6).fill(0).map((item, index) => {
-    return {
-        label: `测试${index}`,
-        value: index * 100
-    }
+let rankingItems = reactive({
+    items: Array(6).fill(0).map((item, index) => {
+        return {
+            label: `测试${index}`,
+            value: index * 100
+        }
+    })
 })
+
+const interval = ref(3000);
+
+// const rankingItems = Array(6).fill(0).map((item, index) => {
+//     return {
+//         label: `测试${index}`,
+//         value: index * 100
+//     }
+// })
+
+const handleChangeItems = () => {
+    // interval.value = 10000;
+    rankingItems.items = Array(10).fill(0).map((item, index) => {
+        return {
+            label: `测试${index}`,
+            value: index * 100
+        }
+    })
+}
 
 const handleClick = (value: string) => {
     console.log(value);

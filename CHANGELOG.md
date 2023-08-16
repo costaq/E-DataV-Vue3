@@ -2,10 +2,16 @@
  * @Autor: costa
  * @Date: 2023-08-02 16:14:59
  * @LastEditors: costa
- * @LastEditTime: 2023-08-10 11:54:03
+ * @LastEditTime: 2023-08-16 12:52:17
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
+# 0.6.1 (2023-08-16)
+
+### Bug Fixes
+
+* **e-scroll-ranking-board:** 解决items变化后，未刷新排行榜bug
+
 # 0.6.0 (2023-08-10)
 
 ### Features

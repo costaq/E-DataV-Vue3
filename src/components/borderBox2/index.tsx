@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-07-20 10:42:28
  * @LastEditors: costa
- * @LastEditTime: 2023-07-25 11:35:43
+ * @LastEditTime: 2023-08-10 13:24:05
  * @Description: 边框组件2
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -53,7 +53,7 @@ export const EBorderBox2 = withInstall(defineComponent({
         const { domRef, domSize } = useResize();
         return () => (
             <GlobalBox className='e-border-box-2' ref={domRef}>
-                <BorderContainer height={domSize.height} width={domSize.width} borderColor={borderColor} borderWidth={borderWidth} lineWidth={lineWidth} backgroundColor={backgroundColor}>
+                <BorderContainer borderColor={borderColor} borderWidth={borderWidth} lineWidth={lineWidth} backgroundColor={backgroundColor}>
                     {slots.default?.()}
                 </BorderContainer>
             </GlobalBox>

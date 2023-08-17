@@ -6,6 +6,12 @@
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
+# 0.6.2 (2023-08-17)
+
+### Optimization
+
+* **e-scroll-ranking-board:** 优化滚动排行榜组件
+
 # 0.6.1 (2023-08-16)
 
 ### Bug Fixes

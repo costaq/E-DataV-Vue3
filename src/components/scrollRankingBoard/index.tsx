@@ -13,6 +13,7 @@ export type ScrollRankingBoardItem = {
 type ScrollRankingBoardItemWithHeight = ScrollRankingBoardItem & {
     height: number;
     ranking: number;
+    scroll: number;
 }
 
 const scrollRankingBoardProps = {
@@ -115,6 +116,7 @@ export const EScrollRankingBoard = withInstall(defineComponent({
 
         // 监听dom尺寸变化, 重新计算每个item的高度
         watch(domSize, (newVal) => {
+            clearTimeout(timer.value);
             const { height } = newVal;
             const itemHeight = height / rowNum;
             avgHeight.value = itemHeight;
@@ -135,7 +137,7 @@ export const EScrollRankingBoard = withInstall(defineComponent({
         const init = () => {
             let newData = [...props.items as ScrollRankingBoardItemWithHeight[]];
             newData = newData.sort((a, b) => b.value - a.value);
-            newData = newData.map((item, index) => ({ ...item, height: avgHeight.value, ranking: index + 1 }));
+            newData = newData.map((item, index) => ({ ...item, height: avgHeight.value, ranking: index + 1, scroll: index }));
             allData.value = newData;
             domData.value = newData.slice(0, rowNum);
 
@@ -155,7 +157,7 @@ export const EScrollRankingBoard = withInstall(defineComponent({
                     }
                 });
                 // 将即将要删除的数据添加到最后
-                newData = [...newData, ...newData.slice(0, scrollNum.value).map((item) => ({ ...item, height: avgHeight.value }))];
+                newData = [...newData, ...newData.slice(0, scrollNum.value).map((item) => ({ ...item, height: avgHeight.value, scroll: item.scroll + rowNum }))];
                 // 新数据保存到allData中
                 allData.value = newData;
                 // domData重新计算
@@ -201,7 +203,7 @@ export const EScrollRankingBoard = withInstall(defineComponent({
                 {
                     domData.value.map((item, index) => {
                         const highlightColor = highlightRowNum >= item.ranking ? (highlightColors[item.ranking - 1] || defaultHighlightColor.value) : color;
-                        return <BoardItem key={item.label + item.ranking} height={item.height} color={color} onClick={() => handleRowClick(item, index)}>
+                        return <BoardItem key={item.label + item.ranking + item.scroll} height={item.height} color={color} onClick={() => handleRowClick(item, index)}>
                             <BoardItemIcon fontSize={rankingFontSize} color={highlightColor}>No.{item.ranking}</BoardItemIcon>
                             <BoardItemLabel fontSize={labelFontSize}>{item.label}</BoardItemLabel>
                             <BoardItemValue fontSize={valueFontSize}>{item.value}</BoardItemValue>

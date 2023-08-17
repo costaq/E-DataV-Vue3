@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-07 15:06:20
  * @LastEditors: costa
- * @LastEditTime: 2023-08-16 12:36:31
+ * @LastEditTime: 2023-08-16 14:13:12
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
@@ -29,13 +29,13 @@
             </div> -->
             <div style="margin-top: 100px;margin-left: 100px;height: 400px;width: 200px;">
                 <e-border-box2 :line-width="20" style="width: 200px;height:200px;margin-left: 100px;margin-top:50px;">
-                    <e-scroll-ranking-board type="single" :items="rankingItems.items" :highlightRowNum="4"
+                    <e-scroll-ranking-board type="single" :items="rankingItems" :highlightRowNum="4"
                         color="#eee"></e-scroll-ranking-board>
                 </e-border-box2>
                 <!-- <e-border-box3></e-border-box3> -->
                 <e-border-box-1 style="width:500px;height:300px;">
-                    <e-scroll-ranking-board type="single" :items="rankingItems.items" :highlightRowNum="4" :interval="interval"
-                        color="#eee"></e-scroll-ranking-board>
+                    <e-scroll-ranking-board type="single" :items="rankingItems"
+                        :highlightColors="['#1e80ff', '#4cc7f3', '#CDDC39']"></e-scroll-ranking-board>
                 </e-border-box-1>
             </div>
             <input type="button" value="测试" @click="() => handleChangeItems()" />
@@ -66,14 +66,21 @@ const items: TabItem[] = [
     }
 ]
 
-let rankingItems = reactive({
-    items: Array(6).fill(0).map((item, index) => {
+// let rankingItems = reactive({
+//     items: Array(6).fill(0).map((item, index) => {
+//         return {
+//             label: `测试${index}`,
+//             value: index * 100
+//         }
+//     })
+// })
+
+const rankingItems = ref(Array(6).fill(0).map((item, index) => {
         return {
             label: `测试${index}`,
             value: index * 100
         }
-    })
-})
+    }))
 
 const interval = ref(3000);
 
@@ -86,7 +93,7 @@ const interval = ref(3000);
 
 const handleChangeItems = () => {
     // interval.value = 10000;
-    rankingItems.items = Array(10).fill(0).map((item, index) => {
+    rankingItems.value = Array(10).fill(0).map((item, index) => {
         return {
             label: `测试${index}`,
             value: index * 100

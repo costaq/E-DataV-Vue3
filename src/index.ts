@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-04 14:53:33
  * @LastEditors: costa
- * @LastEditTime: 2023-08-09 11:48:11
+ * @LastEditTime: 2023-08-31 15:24:48
  * @Description: 入口文件
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -13,10 +13,11 @@ import { EBorderBox2 } from './components/borderBox2';
 import { EWaterLevelPond } from './components/waterLevelPond';
 import { ETab } from './components/tab';
 import { EScrollRankingBoard } from './components/scrollRankingBoard';
+import { EDynamicText } from './components/dynamicText';
 import type { App } from 'vue';
 
 export default function EDataV(app: App) {
-    const components = [EDigitalFlop, EFullScreenContainer, EBorderBox1, EBorderBox2, EWaterLevelPond, ETab, EScrollRankingBoard];
+    const components = [EDigitalFlop, EFullScreenContainer, EBorderBox1, EBorderBox2, EWaterLevelPond, ETab, EScrollRankingBoard, EDynamicText];
 
     components.forEach(component => app.component(component.name, component));
 }
@@ -28,4 +29,5 @@ export * from './components/borderBox2';
 export * from './components/waterLevelPond';
 export * from './components/tab';
 export * from './components/scrollRankingBoard';
+export * from './components/dynamicText';
 

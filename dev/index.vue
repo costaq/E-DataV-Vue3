@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-07 15:06:20
  * @LastEditors: costa
- * @LastEditTime: 2023-08-16 14:13:12
+ * @LastEditTime: 2023-09-01 14:35:38
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
@@ -27,27 +27,32 @@
             <div style="width:700px;height: 500px;margin-top:30px;">
                 <e-tab :items="items" :columns="3" @change="handleClick"></e-tab>
             </div> -->
-            <div style="margin-top: 100px;margin-left: 100px;height: 400px;width: 200px;">
+            <!-- <div style="margin-top: 100px;margin-left: 100px;height: 400px;width: 200px;">
                 <e-border-box2 :line-width="20" style="width: 200px;height:200px;margin-left: 100px;margin-top:50px;">
                     <e-scroll-ranking-board type="single" :items="rankingItems" :highlightRowNum="4"
                         color="#eee"></e-scroll-ranking-board>
                 </e-border-box2>
-                <!-- <e-border-box3></e-border-box3> -->
                 <e-border-box-1 style="width:500px;height:300px;">
                     <e-scroll-ranking-board type="single" :items="rankingItems"
                         :highlightColors="['#1e80ff', '#4cc7f3', '#CDDC39']"></e-scroll-ranking-board>
                 </e-border-box-1>
             </div>
-            <input type="button" value="测试" @click="() => handleChangeItems()" />
+            <input type="button" value="测试" @click="() => handleChangeItems()" /> -->
+            <div style="width:800px;height:200px;">
+                <e-dynamic-text :text="text" style="font-weight: bold;" />
+            </div>
+            <button @click="handleChangeText">更改文字</button>
 
         </e-full-screen-container>
     </div>
 </template>
 <script lang="ts" setup>
-import { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2, ETabProps, TabItem, EScrollRankingBoard } from '../src';
+import { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2, ETabProps, TabItem, EScrollRankingBoard, EDynamicText } from '../src';
 // icon组件可使用其他库，这里只是举例
 // import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
 import { h, reactive, ref, watch } from 'vue';
+const text = ref('E-DataV数据大屏');
+
 const items: TabItem[] = [
     {
         label: '测试1',
@@ -103,5 +108,9 @@ const handleChangeItems = () => {
 
 const handleClick = (value: string) => {
     console.log(value);
+}
+
+const handleChangeText = () => {
+    text.value = '测试文字';
 }
 </script>

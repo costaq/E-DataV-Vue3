@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-14 13:59:05
  * @LastEditors: costa
- * @LastEditTime: 2023-08-16 14:30:15
+ * @LastEditTime: 2023-09-01 14:42:10
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
@@ -31,7 +31,7 @@
                 </e-border-box-1>
             </div>
             <e-border-box-2 style="width:200px;height:200px;">
-                
+                <e-dynamic-text text="text" style="font-weight: bold;" />
             </e-border-box-2>
             <e-scroll-ranking-board style="width:200px;height:200px;" type="single" :items="[{label: '222', value: 222}, {label: '111222', value: 122}, {label: '222', value: 22}, {label: '22332', value: 212}, {label: '2212', value: 242}, {label: '2242', value: 122}]" :highlightRowNum="4"></e-scroll-ranking-board>
         </e-full-screen-container>
@@ -42,7 +42,7 @@
 <!-- <script src="https://unpkg.com/e-datav-vue3/umd/e-datav-vue3.umd.js"></script> -->
 <script>
     const { createApp } = Vue;
-    const { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2, EScrollRankingBoard } = EDataV;
+    const { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2, EScrollRankingBoard, EDynamicText } = EDataV;
 
     const App = createApp();
     App.component('EDigitalFlop', EDigitalFlop);
@@ -51,6 +51,7 @@
     App.component('EFullScreenContainer', EFullScreenContainer);
     App.component('EWaterLevelPond', EWaterLevelPond);
     App.component('ETab', ETab);
+    App.component('EDynamicText', EDynamicText);
     App.component('EScrollRankingBoard', EScrollRankingBoard);
     App.mount('#app');
 </script>

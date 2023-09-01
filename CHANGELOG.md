@@ -2,10 +2,16 @@
  * @Autor: costa
  * @Date: 2023-08-02 16:14:59
  * @LastEditors: costa
- * @LastEditTime: 2023-09-01 14:36:54
+ * @LastEditTime: 2023-09-01 14:58:21
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
+# 0.7.1 (2023-09-01)
+
+### Optimization
+
+* **e-dynamic-text:** 优化为字体大小通过样式修改
+
 # 0.7.0 (2023-09-01)
 
 ### Features

@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-07 15:06:20
  * @LastEditors: costa
- * @LastEditTime: 2023-09-01 14:35:38
+ * @LastEditTime: 2023-09-11 15:46:56
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
@@ -39,7 +39,7 @@
             </div>
             <input type="button" value="测试" @click="() => handleChangeItems()" /> -->
             <div style="width:800px;height:200px;">
-                <e-dynamic-text :text="text" style="font-weight: bold;" />
+                <e-dynamic-text :text="text" style="font-weight: bold;font-size:36px;" />
             </div>
             <button @click="handleChangeText">更改文字</button>
 
@@ -111,6 +111,6 @@ const handleClick = (value: string) => {
 }
 
 const handleChangeText = () => {
-    text.value = '测试文字';
+    text.value = 'E-DataV数据可视化大屏';
 }
 </script>

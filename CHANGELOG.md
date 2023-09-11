@@ -2,10 +2,16 @@
  * @Autor: costa
  * @Date: 2023-08-02 16:14:59
  * @LastEditors: costa
- * @LastEditTime: 2023-09-01 14:58:21
+ * @LastEditTime: 2023-09-11 16:34:22
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
+# 0.7.2 (2023-09-11)
+
+### Bug Fixes
+
+* **e-dynamic-text:** 解决text属性改变时，动画不整齐bug
+
 # 0.7.1 (2023-09-01)
 
 ### Optimization

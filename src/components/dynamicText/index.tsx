@@ -1,7 +1,23 @@
+/*
+ * @Autor: costa
+ * @Date: 2023-08-31 15:22:02
+ * @LastEditors: costa
+ * @LastEditTime: 2023-09-11 16:31:07
+ * @Description: 
+ * @Copyright: © 2023 by costa. All rights reserved.
+ */
+/*
+ * @Autor: costa
+ * @Date: 2023-08-31 15:22:02
+ * @LastEditors: costa
+ * @LastEditTime: 2023-09-11 15:47:39
+ * @Description: 
+ * @Copyright: © 2023 by costa. All rights reserved.
+ */
 import { PropType, computed, defineComponent, watch } from "vue";
 import { withInstall } from "../../utils/common";
 import { ExtractPropTypes } from "vue";
-import { Text } from "./text";
+import { Text, TextContainer } from "./text";
 import { ThemeProvider } from "vue3-styled-components";
 
 const dynamicTextProps = {
@@ -48,9 +64,11 @@ export const EDynamicText = withInstall(defineComponent({
 
         return () =>
             <ThemeProvider class='e-dynamic-text' theme={{}}>
-                {spans.value.map((txt, index) => {
-                    return <Text key={index} spacing={props.spacing} duration={spans.value.length * speed.value} delay={index * speed.value} colors={props.colors}>{txt}</Text>
-                })}
+                <TextContainer colors={props.colors}>
+                    {spans.value.map((txt, index) => {
+                        return <Text key={`${spans.value.length}${index}`} spacing={props.spacing} duration={spans.value.length * speed.value} delay={index * speed.value}>{txt}</Text>
+                    })}
+                </TextContainer>
             </ThemeProvider>
     }
 }));

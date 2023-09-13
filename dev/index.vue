@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-07 15:06:20
  * @LastEditors: costa
- * @LastEditTime: 2023-09-13 14:53:30
+ * @LastEditTime: 2023-09-13 16:27:12
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
@@ -10,7 +10,9 @@
     <div>
         <!-- <e-full-screen-container> -->
             <div>
-                <e-border-box3 text="E-DataV 边框" text-position="left" style="width: 500px;height: 300px;margin-top:20px;"></e-border-box3>
+                <e-border-box3 text="E-DataV 边框" text-position="left" style="width: 500px;height: 300px;margin-top:20px;color:#fff;">
+                    dasdasdasdsd
+                </e-border-box3>
             </div>
             <!-- <div>
                 <e-border-box-1 :colors="['#fff', '#000']" style="width:500px;height:300px;margin-left:200px;">

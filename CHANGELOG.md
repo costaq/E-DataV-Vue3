@@ -2,15 +2,21 @@
  * @Autor: costa
  * @Date: 2023-08-02 16:14:59
  * @LastEditors: costa
- * @LastEditTime: 2023-09-13 15:01:03
+ * @LastEditTime: 2023-09-13 16:49:08
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
+# 0.8.1 (2023-09-13)
+
+### Bug Fixes
+
+* **e-border-box-3:** 解决umd版本组件名错误bug
+
 # 0.8.0 (2023-09-13)
 
 ### Features
 
-* **e-dynamic-text:** 新增了边框组件3
+* **e-border-box-3:** 新增了边框组件3
 
 # 0.7.2 (2023-09-11)
 

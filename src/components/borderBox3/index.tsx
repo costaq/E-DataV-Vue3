@@ -2,17 +2,17 @@
  * @Autor: costa
  * @Date: 2023-09-12 17:26:39
  * @LastEditors: costa
- * @LastEditTime: 2023-09-13 14:53:03
+ * @LastEditTime: 2023-09-13 16:34:31
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
-import { ComponentPublicInstance, ExtractPropTypes, PropType, defineComponent, nextTick, onMounted, reactive, ref } from "vue";
+import { ComponentPublicInstance, ExtractPropTypes, PropType, defineComponent, inject, nextTick, onMounted, reactive, ref } from "vue";
 import { withInstall } from "../../utils/common";
 import { DomSize, useResize } from "../../hooks/useResize";
 import { GlobalBox } from "../styled/GlobalBox";
 import { BorderContainer, BorderTitle } from "./borderContainer";
 
-type TextAlign = 'left' | 'center' | 'right';
+type TextPosition = 'left' | 'center' | 'right';
 
 const borderBoxProps = {
     /**
@@ -54,7 +54,7 @@ const borderBoxProps = {
      * @description 标题位置
      */
     textPosition: {
-        type: String as PropType<TextAlign>,
+        type: String as PropType<TextPosition>,
         default: 'left'
     },
     /**
@@ -72,9 +72,10 @@ const borderBoxProps = {
 export type EBorderBox3Props = ExtractPropTypes<typeof borderBoxProps>;
 
 export const EBorderBox3 = withInstall(defineComponent({
-    name: 'EBorderBox2',
+    name: 'EBorderBox3',
     props: borderBoxProps,
     setup(props, { slots }) {
+        inject('theme', '');
         const { domRef, domSize } = useResize();
         const titleRef = ref<ComponentPublicInstance>();
         const titleSize = reactive<DomSize>({
@@ -89,21 +90,19 @@ export const EBorderBox3 = withInstall(defineComponent({
         });
 
         return () => (
-            <GlobalBox className='e-border-box-3' ref={domRef}>
-                <BorderContainer borderColor={props.borderColor} borderWidth={props.borderWidth} backgroundColor={props.backgroundColor}>
-                    <BorderTitle
-                        fontColor={props.fontColor}
-                        fontSize={props.fontSize}
-                        textPosition={props.textPosition}
-                        backgroundColor={props.borderColor}
-                        ref={titleRef}
-                        height={titleSize.height}
-                        width={titleSize.width}>
-                        {props.text}
-                    </BorderTitle>
-                    {slots.default?.()}
-                </BorderContainer>
-            </GlobalBox>
+            <BorderContainer class='e-border-box-3' borderColor={props.borderColor} borderWidth={props.borderWidth} backgroundColor={props.backgroundColor} ref={domRef}>
+                <BorderTitle
+                    fontColor={props.fontColor}
+                    fontSize={props.fontSize}
+                    textPosition={props.textPosition}
+                    backgroundColor={props.borderColor}
+                    ref={titleRef}
+                    height={titleSize.height}
+                    width={titleSize.width}>
+                    {props.text}
+                </BorderTitle>
+                {slots.default?.()}
+            </BorderContainer>
         );
     },
 }));

@@ -6,6 +6,12 @@
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
+# 0.8.2 (2023-09-13)
+
+### Bug Fixes
+
+* **e-border-box-3:** 解决bug
+
 # 0.8.1 (2023-09-13)
 
 ### Bug Fixes

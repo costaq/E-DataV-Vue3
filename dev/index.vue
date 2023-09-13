@@ -2,13 +2,16 @@
  * @Autor: costa
  * @Date: 2023-04-07 15:06:20
  * @LastEditors: costa
- * @LastEditTime: 2023-09-11 15:46:56
+ * @LastEditTime: 2023-09-13 14:53:30
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
 <template>
     <div>
-        <e-full-screen-container>
+        <!-- <e-full-screen-container> -->
+            <div>
+                <e-border-box3 text="E-DataV 边框" text-position="left" style="width: 500px;height: 300px;margin-top:20px;"></e-border-box3>
+            </div>
             <!-- <div>
                 <e-border-box-1 :colors="['#fff', '#000']" style="width:500px;height:300px;margin-left:200px;">
                     <e-digital-flop />
@@ -38,16 +41,16 @@
                 </e-border-box-1>
             </div>
             <input type="button" value="测试" @click="() => handleChangeItems()" /> -->
-            <div style="width:800px;height:200px;">
+            <!-- <div style="width:800px;height:200px;">
                 <e-dynamic-text :text="text" style="font-weight: bold;font-size:36px;" />
             </div>
-            <button @click="handleChangeText">更改文字</button>
+            <button @click="handleChangeText">更改文字</button> -->
 
-        </e-full-screen-container>
+        <!-- </e-full-screen-container> -->
     </div>
 </template>
 <script lang="ts" setup>
-import { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2, ETabProps, TabItem, EScrollRankingBoard, EDynamicText } from '../src';
+import { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, EBorderBox3, ETab, EBorderBox2, ETabProps, TabItem, EScrollRankingBoard, EDynamicText } from '../src';
 // icon组件可使用其他库，这里只是举例
 // import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
 import { h, reactive, ref, watch } from 'vue';

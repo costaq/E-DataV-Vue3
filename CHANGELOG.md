@@ -2,10 +2,16 @@
  * @Autor: costa
  * @Date: 2023-08-02 16:14:59
  * @LastEditors: costa
- * @LastEditTime: 2023-09-11 16:34:22
+ * @LastEditTime: 2023-09-13 15:01:03
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
+# 0.8.0 (2023-09-13)
+
+### Features
+
+* **e-dynamic-text:** 新增了边框组件3
+
 # 0.7.2 (2023-09-11)
 
 ### Bug Fixes

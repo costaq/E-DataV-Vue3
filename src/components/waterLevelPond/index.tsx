@@ -2,13 +2,13 @@
  * @Autor: costa
  * @Date: 2023-06-30 16:59:40
  * @LastEditors: costa
- * @LastEditTime: 2023-07-25 10:52:51
+ * @LastEditTime: 2023-09-14 14:32:50
  * @Description: 水位图
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import { ExtractPropTypes, PropType, defineComponent, onMounted, ref, watch } from "vue";
 import { genNonDuplicateID, withInstall } from "../../utils/common";
-import { BoxContent, WaterWave } from "./boxContainer";
+import { BoxContent, WaterWave } from "./pond.style";
 import { animation } from "../../utils/animation";
 import { GlobalBox } from "../styled/GlobalBox";
 

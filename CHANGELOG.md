@@ -2,10 +2,17 @@
  * @Autor: costa
  * @Date: 2023-08-02 16:14:59
  * @LastEditors: costa
- * @LastEditTime: 2023-09-13 16:49:08
+ * @LastEditTime: 2023-09-14 14:34:24
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
+# 0.8.3 (2023-09-14)
+
+### Optimization
+
+* **e-border-box-2:** 优化布局
+* **e-border-box-3:** 优化布局
+
 # 0.8.2 (2023-09-13)
 
 ### Bug Fixes

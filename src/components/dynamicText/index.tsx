@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-08-31 15:22:02
  * @LastEditors: costa
- * @LastEditTime: 2023-09-11 16:31:07
+ * @LastEditTime: 2023-09-14 14:31:32
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -17,7 +17,7 @@
 import { PropType, computed, defineComponent, watch } from "vue";
 import { withInstall } from "../../utils/common";
 import { ExtractPropTypes } from "vue";
-import { Text, TextContainer } from "./text";
+import { Text, TextContainer } from "./text.style";
 import { ThemeProvider } from "vue3-styled-components";
 
 const dynamicTextProps = {

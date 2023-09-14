@@ -2,13 +2,13 @@
  * @Autor: costa
  * @Date: 2023-07-13 13:45:46
  * @LastEditors: costa
- * @LastEditTime: 2023-08-02 15:57:51
+ * @LastEditTime: 2023-09-14 14:32:26
  * @Description: Tab组件
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import { ExtractPropTypes, computed, defineComponent, onMounted, reactive, ref, watch, PropType, VNode } from "vue";
 import { genNonDuplicateID, withInstall } from "../../utils/common";
-import { ItemBorder, ItemIcon, ItemText, Tab, ItemContent, TabItem } from './tab';
+import { ItemBorder, ItemIcon, ItemText, Tab, ItemContent, TabItem } from './tab.style';
 import { useResize, DomSize } from "../../hooks/useResize";
 import { ThemeProvider } from "vue3-styled-components";
 

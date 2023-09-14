@@ -8,9 +8,9 @@
  */
 import { ExtractPropTypes, defineComponent } from "vue";
 import { withInstall } from "../../utils/common";
-import { BorderContainer } from './borderContainer';
-import { GlobalBox } from "../styled/GlobalBox";
+import { BorderContainer } from './border.style';
 import { useResize } from "../../hooks/useResize";
+import { Theme } from "../../mixins/theme";
 
 const borderBoxProps = {
     /**
@@ -23,23 +23,23 @@ const borderBoxProps = {
     /**
      * @description 边框宽度
      */
-    borderWidth: { 
-        type: Number, 
-        default: 2 
+    borderWidth: {
+        type: Number,
+        default: 2
     },
     /**
      * @description 边框线长度
      */
-    lineWidth: { 
-        type: Number, 
-        default: 10 
+    lineWidth: {
+        type: Number,
+        default: 10
     },
     /**
      * @description 背景色
      */
-    backgroundColor: { 
-        type: String, 
-        default: 'rgba(76, 199, 243, 0.15)' 
+    backgroundColor: {
+        type: String,
+        default: 'rgba(76, 199, 243, 0.15)'
     }
 };
 
@@ -48,15 +48,14 @@ export type EBorderBox2Props = ExtractPropTypes<typeof borderBoxProps>;
 export const EBorderBox2 = withInstall(defineComponent({
     name: 'EBorderBox2',
     props: borderBoxProps,
+    mixins: [Theme],
     setup(props, { slots }) {
         const { borderColor, borderWidth, lineWidth, backgroundColor } = props;
         const { domRef, domSize } = useResize();
         return () => (
-            <GlobalBox className='e-border-box-2' ref={domRef}>
-                <BorderContainer borderColor={borderColor} borderWidth={borderWidth} lineWidth={lineWidth} backgroundColor={backgroundColor}>
-                    {slots.default?.()}
-                </BorderContainer>
-            </GlobalBox>
+            <BorderContainer class='e-border-box-2' ref={domRef} borderColor={borderColor} borderWidth={borderWidth} lineWidth={lineWidth} backgroundColor={backgroundColor}>
+                {slots.default?.()}
+            </BorderContainer>
         );
     },
 }));

@@ -2,7 +2,7 @@ import { ExtractPropTypes, PropType, computed, defineComponent, onMounted, ref, 
 import { withInstall } from "../../utils/common";
 import { useResize } from "../../hooks/useResize";
 import { GlobalBox } from "../styled/GlobalBox";
-import { BoardItem, BoardItemIcon, BoardItemLabel, BoardItemValue, BoardItemShadow } from "./board";
+import { BoardItem, BoardItemIcon, BoardItemLabel, BoardItemValue, BoardItemShadow } from "./board.style";
 
 export type ScrollRankingBoardItem = {
     label: string;

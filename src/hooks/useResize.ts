@@ -2,12 +2,11 @@
  * @Autor: costa
  * @Date: 2023-05-16 11:02:59
  * @LastEditors: costa
- * @LastEditTime: 2023-07-13 17:13:39
+ * @LastEditTime: 2023-10-09 13:47:04
  * @Description: hooks 帮助类 获取组件可用宽高
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import { ComponentPublicInstance, onMounted, reactive, ref } from "vue";
-import _ from 'lodash';
 
 export interface DomSize {
     width: number;

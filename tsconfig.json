@@ -14,6 +14,7 @@
     "noEmit": true,
     // "noImplicitAny": false,
     // "allowImportingTsExtensions": true,
+    "noImplicitThis": false,
     "allowJs": true,
     "types": [
       "node"

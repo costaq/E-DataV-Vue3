@@ -2,13 +2,12 @@
  * @Autor: costa
  * @Date: 2023-04-07 10:46:04
  * @LastEditors: costa
- * @LastEditTime: 2023-05-16 16:32:05
+ * @LastEditTime: 2023-10-09 13:43:00
  * @Description: 全屏组件
  * @Copyright: © 2023 by costa. All rights reserved.
  */
 import { ExtractPropTypes, defineComponent, onBeforeMount, onMounted } from "vue";
-import { withInstall } from '../../utils/common';
-import _ from 'lodash';
+import { debounce, withInstall } from '../../utils/common';
 
 const fullScreenContainerProps = {
     /**
@@ -44,6 +43,7 @@ export const EFullScreenContainer = withInstall(defineComponent({
     props: fullScreenContainerProps,
     setup(props, { slots }) {
         const scale = () => {
+            console.log(1);
             const windowWidth =
                 document.documentElement.clientWidth || window.screen.width;
 
@@ -93,7 +93,7 @@ export const EFullScreenContainer = withInstall(defineComponent({
 
         onBeforeMount(() => {
             scale();
-            window.addEventListener('resize', _.debounce(scale, 100));
+            window.addEventListener('resize', debounce(scale, 100));
         });
 
         return () => (

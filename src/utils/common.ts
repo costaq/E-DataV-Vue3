@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-04 15:42:54
  * @LastEditors: costa
- * @LastEditTime: 2023-07-06 14:30:00
+ * @LastEditTime: 2023-10-09 13:41:55
  * @Description: 组件install工具类
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -26,4 +26,18 @@ export function withInstall<T>(comp: T) {
 export function genNonDuplicateID() {
     let idStr = Date.now().toString(36) + Math.random().toString(36).substring(3);
     return idStr
+}
+
+// 防抖函数
+export function debounce(fn: Function, delay: number) {
+    let timer: any = null;
+    return function (...args: any) {
+        let context = this;
+        if (timer) {
+            clearTimeout(timer);
+        }
+        timer = setTimeout(() => {
+            fn.apply(context, args);
+        }, delay);
+    };
 }

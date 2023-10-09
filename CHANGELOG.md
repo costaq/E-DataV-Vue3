@@ -2,10 +2,16 @@
  * @Autor: costa
  * @Date: 2023-08-02 16:14:59
  * @LastEditors: costa
- * @LastEditTime: 2023-09-14 14:34:24
+ * @LastEditTime: 2023-10-09 13:46:00
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
+# 0.8.4 (2023-10-09)
+
+### Optimization
+
+去除lodash依赖
+
 # 0.8.3 (2023-09-14)
 
 ### Optimization

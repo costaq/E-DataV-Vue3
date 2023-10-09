@@ -2,13 +2,13 @@
  * @Autor: costa
  * @Date: 2023-04-07 15:06:20
  * @LastEditors: costa
- * @LastEditTime: 2023-09-14 14:33:13
+ * @LastEditTime: 2023-10-09 13:37:54
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
 <template>
     <div>
-        <!-- <e-full-screen-container> -->
+        <e-full-screen-container>
             <div>
                 <e-border-box3 text="E-DataV 边框" text-position="left" style="width: 500px;height: 300px;margin-top:20px;color:#fff;">
                     dasdasdasdsd
@@ -16,7 +16,7 @@
             </div>
             <div>
                 <e-border-box-1 :colors="['#fff', '#000']" style="width:500px;height:300px;margin-left:200px;">
-                    <e-digital-flop />
+                    <e-digital-flop :value="1000" color="#fff" />
                     <e-digital-flop />
                     <e-water-level-pond style="width:200px;height:200px;" :value="36" :background-color="'#000'" />
                     
@@ -48,7 +48,7 @@
             </div>
             <button @click="handleChangeText">更改文字</button> -->
 
-        <!-- </e-full-screen-container> -->
+        </e-full-screen-container>
     </div>
 </template>
 <script lang="ts" setup>

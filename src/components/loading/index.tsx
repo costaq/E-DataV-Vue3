@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-10-11 13:21:06
  * @LastEditors: costa
- * @LastEditTime: 2023-10-11 15:40:27
+ * @LastEditTime: 2023-10-11 16:16:27
  * @Description: loading组件
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -45,7 +45,7 @@ const loadingProps = {
 export type ELoadingProps = ExtractPropTypes<typeof loadingProps>;
 
 export const ELoading = withInstall(defineComponent({
-    name: 'EDynamicText',
+    name: 'ELoading',
     props: loadingProps,
     mixins: [Theme],
     setup(props, { slots }) {

@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-14 13:59:05
  * @LastEditors: costa
- * @LastEditTime: 2023-09-13 16:48:43
+ * @LastEditTime: 2023-10-11 16:10:21
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
@@ -22,7 +22,8 @@
 
 <body>
     <div id="app">
-        <e-full-screen-container>
+        <e-loading font-size="12">Loading...</e-loading>
+        <!-- <e-full-screen-container>
             <e-border-box-3 text="ewqewqeqw" style="width:300px;height:200px;"></e-border-box-3>
             <div style="width:500px;height:500px;margin-left:200px;">
                 <e-border-box-1 :colors="['#fff', '#c75151']">
@@ -35,7 +36,7 @@
                 <e-dynamic-text text="text" style="font-weight: bold;" />
             </e-border-box-2>
             <e-scroll-ranking-board style="width:200px;height:200px;" type="single" :items="[{label: '222', value: 222}, {label: '111222', value: 122}, {label: '222', value: 22}, {label: '22332', value: 212}, {label: '2212', value: 242}, {label: '2242', value: 122}]" :highlightRowNum="4"></e-scroll-ranking-board>
-        </e-full-screen-container>
+        </e-full-screen-container> -->
     </div>
 </body>
 <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
@@ -43,7 +44,7 @@
 <!-- <script src="https://unpkg.com/e-datav-vue3/umd/e-datav-vue3.umd.js"></script> -->
 <script>
     const { createApp } = Vue;
-    const { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2, EScrollRankingBoard, EDynamicText, EBorderBox3 } = EDataV;
+    const { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2, EScrollRankingBoard, EDynamicText, EBorderBox3, ELoading } = EDataV;
 
     const App = createApp();
     App.component('EDigitalFlop', EDigitalFlop);
@@ -55,6 +56,7 @@
     App.component('ETab', ETab);
     App.component('EDynamicText', EDynamicText);
     App.component('EScrollRankingBoard', EScrollRankingBoard);
+    App.component('ELoading', ELoading);
     App.mount('#app');
 </script>
 

@@ -2,10 +2,16 @@
  * @Autor: costa
  * @Date: 2023-08-02 16:14:59
  * @LastEditors: costa
- * @LastEditTime: 2023-10-09 13:46:00
+ * @LastEditTime: 2023-10-11 15:59:33
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
+# 0.9.0 (2023-10-11)
+
+### Features
+
+* **e-loading:** 新增了Loading加载组件
+
 # 0.8.4 (2023-10-09)
 
 ### Optimization

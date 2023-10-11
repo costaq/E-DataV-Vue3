@@ -2,14 +2,19 @@
  * @Autor: costa
  * @Date: 2023-04-07 15:06:20
  * @LastEditors: costa
- * @LastEditTime: 2023-10-09 13:37:54
+ * @LastEditTime: 2023-10-11 15:57:32
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
 <template>
     <div>
-        <e-full-screen-container>
+        <!-- <e-full-screen-container> -->
             <div>
+                <e-loading font-color="#ff9797" :font-size="12" border-color="#f53f3f" :size="80" style="position:absolute;">
+                    加载中...
+                </e-loading>
+            </div>
+            <!-- <div>
                 <e-border-box3 text="E-DataV 边框" text-position="left" style="width: 500px;height: 300px;margin-top:20px;color:#fff;">
                     dasdasdasdsd
                 </e-border-box3>
@@ -25,14 +30,14 @@
             <div style="width: 200px;height:200px;">
                 <e-water-level-pond :value="36" :background-color="'#000'" />
 
-            </div>
+            </div> -->
             <!-- <div style="width:700px;height: 150px;margin-top:30px;">
                 <e-tab :items="items" :columns="3" @change="handleClick"></e-tab>
             </div>
             <div style="width:700px;height: 500px;margin-top:30px;">
                 <e-tab :items="items" :columns="3" @change="handleClick"></e-tab>
             </div> -->
-            <div style="margin-top: 100px;margin-left: 100px;height: 400px;width: 200px;">
+            <!-- <div style="margin-top: 100px;margin-left: 100px;height: 400px;width: 200px;">
                 <e-border-box2 :line-width="20" style="width: 200px;height:200px;margin-left: 100px;margin-top:50px;">
                     <e-scroll-ranking-board type="single" :items="rankingItems" :highlightRowNum="4"
                         color="#eee"></e-scroll-ranking-board>
@@ -42,17 +47,17 @@
                         :highlightColors="['#1e80ff', '#4cc7f3', '#CDDC39']"></e-scroll-ranking-board>
                 </e-border-box-1>
             </div>
-            <input type="button" value="测试" @click="() => handleChangeItems()" />
+            <input type="button" value="测试" @click="() => handleChangeItems()" /> -->
             <!-- <div style="width:800px;height:200px;">
                 <e-dynamic-text :text="text" style="font-weight: bold;font-size:36px;" />
             </div>
             <button @click="handleChangeText">更改文字</button> -->
 
-        </e-full-screen-container>
+        <!-- </e-full-screen-container> -->
     </div>
 </template>
 <script lang="ts" setup>
-import { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, EBorderBox3, ETab, EBorderBox2, ETabProps, TabItem, EScrollRankingBoard, EDynamicText } from '../src';
+import { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, EBorderBox3, ETab, EBorderBox2, ETabProps, TabItem, EScrollRankingBoard, EDynamicText, ELoading } from '../src';
 // icon组件可使用其他库，这里只是举例
 // import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
 import { h, reactive, ref, watch } from 'vue';
@@ -119,3 +124,8 @@ const handleChangeText = () => {
     text.value = 'E-DataV数据可视化大屏';
 }
 </script>
+<style>
+*{
+    margin: 0;
+}
+</style>

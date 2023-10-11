@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-04 15:42:54
  * @LastEditors: costa
- * @LastEditTime: 2023-10-09 13:41:55
+ * @LastEditTime: 2023-10-10 09:27:21
  * @Description: 组件install工具类
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -32,12 +32,11 @@ export function genNonDuplicateID() {
 export function debounce(fn: Function, delay: number) {
     let timer: any = null;
     return function (...args: any) {
-        let context = this;
         if (timer) {
             clearTimeout(timer);
         }
         timer = setTimeout(() => {
-            fn.apply(context, args);
+            fn.apply(this, args);
         }, delay);
     };
 }

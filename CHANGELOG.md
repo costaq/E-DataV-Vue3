@@ -6,6 +6,12 @@
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
+# 0.9.2 (2023-09-14)
+
+### Optimization
+
+* **e-border-box-2:** 优化样式
+
 # 0.9.1 (2023-09-14)
 
 ### Optimization

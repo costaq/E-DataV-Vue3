@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-10-11 13:21:15
  * @LastEditors: costa
- * @LastEditTime: 2023-10-11 16:48:14
+ * @LastEditTime: 2023-10-11 16:53:09
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -104,5 +104,4 @@ export const LoadingText = styled('span', loadingTextProps)`
     letter-spacing: 2px;
     text-transform: uppercase;
     text-shadow: 0 0 10px ${props => props.color};
-    box-shadow: 0 0 20px ${props => colorRgba(props.color, 0.15)};
 `;

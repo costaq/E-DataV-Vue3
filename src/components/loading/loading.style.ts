@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-10-11 13:21:15
  * @LastEditors: costa
- * @LastEditTime: 2023-10-11 15:46:31
+ * @LastEditTime: 2023-10-11 16:48:14
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -53,6 +53,7 @@ export const LoadingCircle = styled('div', loadingCircleProps)`
         border-top: 3px solid ${props => props.borderColor};
         border-right: 3px solid ${props => props.borderColor};
         border-radius: 50%;
+        box-sizing: content-box;
         animation: circle-spin 2s linear infinite;
     }
 

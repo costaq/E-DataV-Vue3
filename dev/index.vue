@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-07 15:06:20
  * @LastEditors: costa
- * @LastEditTime: 2023-10-11 15:57:32
+ * @LastEditTime: 2023-10-24 10:53:24
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
@@ -10,7 +10,7 @@
     <div>
         <!-- <e-full-screen-container> -->
             <div>
-                <e-loading font-color="#ff9797" :font-size="12" border-color="#f53f3f" :size="80" style="position:absolute;">
+                <e-loading border-color="#f53f3f" :size="80" style="position:absolute;font-size:12px;color:#ff9797;">
                     加载中...
                 </e-loading>
             </div>

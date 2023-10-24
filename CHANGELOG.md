@@ -2,21 +2,27 @@
  * @Autor: costa
  * @Date: 2023-08-02 16:14:59
  * @LastEditors: costa
- * @LastEditTime: 2023-10-11 15:59:33
+ * @LastEditTime: 2023-10-24 11:02:29
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
-# 0.9.2 (2023-09-14)
+# 0.9.3 (2023-10-24)
 
 ### Optimization
 
-* **e-border-box-2:** 优化样式
+* **e-loading:** 去除fontColor、fontSize配置
 
-# 0.9.1 (2023-09-14)
+# 0.9.2 (2023-10-14)
 
 ### Optimization
 
-* **e-border-box-2:** 优化样式
+* **e-loading:** 优化样式
+
+# 0.9.1 (2023-10-14)
+
+### Optimization
+
+* **e-loading:** 优化样式
 
 # 0.9.0 (2023-10-11)
 

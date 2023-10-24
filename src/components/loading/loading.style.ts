@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-10-11 13:21:15
  * @LastEditors: costa
- * @LastEditTime: 2023-10-11 16:53:09
+ * @LastEditTime: 2023-10-24 11:00:45
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -13,11 +13,6 @@ const loadingCircleProps = {
     borderColor: { type: String, default: "#1e80ff" },
     size: { type: Number, default: 120 }
 };
-
-const loadingTextProps = {
-    color: { type: String, default: "#1e80ff" },
-    fontSize: { type: Number, default: 16 }
-}
 
 const loadingBallProps = {
     color: { type: String, default: "#1e80ff" },
@@ -30,6 +25,10 @@ export const LoadingContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #1e80ff;
 `;
 
 export const LoadingCircle = styled('div', loadingCircleProps)`
@@ -96,12 +95,4 @@ export const LoadingBall = styled('span', loadingBallProps)`
         0% { transform: rotate(45deg); }
         100% { transform: rotate(405deg); }
     }
-`;
-
-export const LoadingText = styled('span', loadingTextProps)`
-    font-size: ${props => props.fontSize}px;
-    color: ${props => props.color};
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-shadow: 0 0 10px ${props => props.color};
 `;

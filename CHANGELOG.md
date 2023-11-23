@@ -2,10 +2,16 @@
  * @Autor: costa
  * @Date: 2023-08-02 16:14:59
  * @LastEditors: costa
- * @LastEditTime: 2023-10-24 11:02:29
+ * @LastEditTime: 2023-11-23 10:30:34
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
+# 0.10.0 (2023-11-23)
+
+### Features
+
+* **e-gauge-chart:** 新增了仪表盘组件
+
 # 0.9.3 (2023-10-24)
 
 ### Optimization

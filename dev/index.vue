@@ -2,18 +2,24 @@
  * @Autor: costa
  * @Date: 2023-04-07 15:06:20
  * @LastEditors: costa
- * @LastEditTime: 2023-10-24 10:53:24
+ * @LastEditTime: 2023-11-23 10:59:15
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
 <template>
     <div>
+        <div style="height: 300px;width:800px;">
+            <e-gauge-chart :value="value"></e-gauge-chart>
+        </div>
+        
+        <input type="text" v-model="defaultValue" />
+        <input type="button" @click="changeValue" value="设置值" />
         <!-- <e-full-screen-container> -->
-            <div>
+            <!-- <div>
                 <e-loading border-color="#f53f3f" :size="80" style="position:absolute;font-size:12px;color:#ff9797;">
                     加载中...
                 </e-loading>
-            </div>
+            </div> -->
             <!-- <div>
                 <e-border-box3 text="E-DataV 边框" text-position="left" style="width: 500px;height: 300px;margin-top:20px;color:#fff;">
                     dasdasdasdsd
@@ -57,11 +63,17 @@
     </div>
 </template>
 <script lang="ts" setup>
-import { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, EBorderBox3, ETab, EBorderBox2, ETabProps, TabItem, EScrollRankingBoard, EDynamicText, ELoading } from '../src';
+import { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, EBorderBox3, ETab, EBorderBox2, ETabProps, TabItem, EScrollRankingBoard, EDynamicText, ELoading, EGaugeChart } from '../src';
 // icon组件可使用其他库，这里只是举例
 // import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
 import { h, reactive, ref, watch } from 'vue';
 const text = ref('E-DataV数据大屏');
+const value = ref(66);
+const defaultValue = ref(66);
+
+const changeValue = () => {
+    value.value = +defaultValue.value;
+}
 
 const items: TabItem[] = [
     {

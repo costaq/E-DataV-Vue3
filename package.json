@@ -1,6 +1,6 @@
 {
   "name": "e-datav-vue3",
-  "version": "0.9.3",
+  "version": "0.10.0",
   "type": "module",
   "description": "vue3 大屏组件",
   "main": "./cjs/index.cjs",

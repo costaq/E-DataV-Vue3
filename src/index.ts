@@ -2,7 +2,7 @@
  * @Autor: costa
  * @Date: 2023-04-04 14:53:33
  * @LastEditors: costa
- * @LastEditTime: 2023-10-11 13:40:35
+ * @LastEditTime: 2023-11-21 15:23:37
  * @Description: 入口文件
  * @Copyright: © 2023 by costa. All rights reserved.
  */
@@ -16,10 +16,11 @@ import { ETab } from './components/tab';
 import { EScrollRankingBoard } from './components/scrollRankingBoard';
 import { EDynamicText } from './components/dynamicText';
 import { ELoading } from './components/loading';
+import { EGaugeChart } from './components/gaugeChart';
 import type { App } from 'vue';
 
 export default function EDataV(app: App) {
-    const components = [EDigitalFlop, EFullScreenContainer, EBorderBox1, EBorderBox2, EBorderBox3, EWaterLevelPond, ETab, EScrollRankingBoard, EDynamicText, ELoading];
+    const components = [EDigitalFlop, EFullScreenContainer, EBorderBox1, EBorderBox2, EBorderBox3, EWaterLevelPond, ETab, EScrollRankingBoard, EDynamicText, ELoading, EGaugeChart];
 
     components.forEach(component => app.component(component.name, component));
 }
@@ -34,4 +35,5 @@ export * from './components/tab';
 export * from './components/scrollRankingBoard';
 export * from './components/dynamicText';
 export * from './components/loading';
+export * from './components/gaugeChart';
 

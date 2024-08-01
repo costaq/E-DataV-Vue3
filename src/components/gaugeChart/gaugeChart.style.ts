@@ -51,6 +51,13 @@ export const Graduate = styled('span', graduateProps)`
     }
 `;
 
+export const GaugeTextContainer = styled('div')`
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 export const GaugeText = styled('span', gaugeTextProps)`
     position: relative;
     color: white;

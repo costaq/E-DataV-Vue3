@@ -9,7 +9,7 @@
 import { ExtractPropTypes, computed, defineComponent, onMounted, ref, watch } from "vue";
 import { withInstall } from "../../utils/common";
 import { Theme } from "../../mixins/theme";
-import { GaugeContainer, GaugeText, Graduate } from "./gaugeChart.style";
+import { GaugeContainer, GaugeText, Graduate, GaugeTextContainer } from "./gaugeChart.style";
 import { animation } from "../../utils/animation";
 import { GlobalFontStyle } from "../styled/GlobalStyle";
 import { useResize } from "../../hooks/useResize";
@@ -26,11 +26,26 @@ const gaugeChartProps = {
         }
     },
     /**
+     * @description 描述文字
+     */
+    text: {
+        type: String,
+        default: '',
+        required: false
+    },
+    /**
      * @description 数值字体大小
      */
     valueFontSize: {
         type: Number,
         default: 30
+    },
+    /**
+     * @description 描述文字字体大小
+     */
+    textFontSize: {
+        type: Number,
+        default: 24
     }
 }
 
@@ -87,9 +102,15 @@ export const EGaugeChart = withInstall(defineComponent({
                         />
                     )
                 }
-                <GaugeText fontSize={props.valueFontSize} color={`hsl(${calcDeg(props.value)}deg, 100%, 50%)`}>
-                    {displayVal.value}
-                </GaugeText>
+
+                <GaugeTextContainer>
+                    <GaugeText fontSize={props.textFontSize} color={`hsl(${calcDeg(props.value)}deg, 100%, 50%)`}>
+                        {props.text}
+                    </GaugeText>
+                    <GaugeText fontSize={props.valueFontSize} color={`hsl(${calcDeg(props.value)}deg, 100%, 50%)`}>
+                        {displayVal.value}
+                    </GaugeText>
+                </GaugeTextContainer>
             </GaugeContainer>
         );
     }

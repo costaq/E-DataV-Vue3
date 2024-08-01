@@ -22,7 +22,10 @@
 
 <body>
     <div id="app">
-        <e-loading font-size="12">Loading...</e-loading>
+        <!-- <e-loading font-size="12">Loading...</e-loading> -->
+        <div style="height: 200px;width:200px;">
+            <e-gauge-chart :value="50" text="每日上报人数" :textFontSize="40"></e-gauge-chart>
+        </div>
         <!-- <e-full-screen-container>
             <e-border-box-3 text="ewqewqeqw" style="width:300px;height:200px;"></e-border-box-3>
             <div style="width:500px;height:500px;margin-left:200px;">
@@ -44,7 +47,7 @@
 <!-- <script src="https://unpkg.com/e-datav-vue3/umd/e-datav-vue3.umd.js"></script> -->
 <script>
     const { createApp } = Vue;
-    const { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2, EScrollRankingBoard, EDynamicText, EBorderBox3, ELoading } = EDataV;
+    const { EDigitalFlop, EFullScreenContainer, EBorderBox1, EWaterLevelPond, ETab, EBorderBox2, EScrollRankingBoard, EDynamicText, EBorderBox3, ELoading, EGaugeChart } = EDataV;
 
     const App = createApp();
     App.component('EDigitalFlop', EDigitalFlop);
@@ -57,6 +60,7 @@
     App.component('EDynamicText', EDynamicText);
     App.component('EScrollRankingBoard', EScrollRankingBoard);
     App.component('ELoading', ELoading);
+    App.component('EGaugeChart', EGaugeChart);
     App.mount('#app');
 </script>
 

@@ -6,6 +6,12 @@
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
+# 0.11.0 (2024-8-1)
+
+### Features
+
+* **e-gauge-chart:** 仪表盘组件增加文本内容设置
+
 # 0.10.0 (2023-11-23)
 
 ### Features

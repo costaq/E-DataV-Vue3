@@ -16,7 +16,8 @@ const graduateProps = {
 
 const gaugeTextProps = {
     fontSize: { type: Number, default: 30 },
-    color: { type: String, default: '#000' }
+    color: { type: String, default: '#000' },
+    spacing: { type: Number, default: 2 },
 };
 
 export const GaugeContainer = styled('div')`
@@ -64,4 +65,5 @@ export const GaugeText = styled('span', gaugeTextProps)`
     font-size: ${props => props.fontSize}px;
     text-shadow: 1px 1px 0 gray, 0 0 4px ${props => props.color}, 0 0 8px ${props => props.color};
     font-family: electronic;
+    margin: ${props => props.spacing}px 0;
 `;

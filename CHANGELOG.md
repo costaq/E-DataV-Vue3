@@ -6,7 +6,13 @@
  * @Description: 
  * @Copyright: © 2023 by costa. All rights reserved.
 -->
-# 0.11.0 (2024-8-1)
+# 0.11.1 (2024-8-1)
+
+### Optimization
+
+* **e-gauge-chart:** 优化仪表盘组件样式
+
+# 0.11.0 (2024-7-31)
 
 ### Features
 

@@ -46,6 +46,13 @@ const gaugeChartProps = {
     textFontSize: {
         type: Number,
         default: 24
+    },
+    /**
+     * @description 文本的上下间距
+     */
+    spacing: {
+        type: Number,
+        default: 2
     }
 }
 
@@ -104,10 +111,10 @@ export const EGaugeChart = withInstall(defineComponent({
                 }
 
                 <GaugeTextContainer>
-                    <GaugeText fontSize={props.textFontSize} color={`hsl(${calcDeg(props.value)}deg, 100%, 50%)`}>
+                    <GaugeText spacing={props.spacing} fontSize={props.textFontSize} color={`hsl(${calcDeg(props.value)}deg, 100%, 50%)`}>
                         {props.text}
                     </GaugeText>
-                    <GaugeText fontSize={props.valueFontSize} color={`hsl(${calcDeg(props.value)}deg, 100%, 50%)`}>
+                    <GaugeText spacing={props.spacing} fontSize={props.valueFontSize} color={`hsl(${calcDeg(props.value)}deg, 100%, 50%)`}>
                         {displayVal.value}
                     </GaugeText>
                 </GaugeTextContainer>

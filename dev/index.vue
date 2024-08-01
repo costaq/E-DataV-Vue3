@@ -8,8 +8,8 @@
 -->
 <template>
     <div>
-        <div style="height: 200px;width:200px;">
-            <e-gauge-chart :value="value" text="每日上报人数" :textFontSize="12"></e-gauge-chart>
+        <div style="height: 100px;width:100px;">
+            <e-gauge-chart :spacing="2" :value="value" text="每日上报人数" :textFontSize="12"></e-gauge-chart>
         </div>
         
         <input type="text" v-model="defaultValue" />
